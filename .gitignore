@@ -1,0 +1,22 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Large local archival media; use manifests unless redistribution is intentional
+scans/originals/
+photos/originals/
+*.tif
+*.tiff
+*.raw
+*.heic
+
+# Never commit game ROMs or binary dumps
+*.nes
+*.bin
+*.rom
+*.chd
+*.zip
+*.7z
+*.rar
