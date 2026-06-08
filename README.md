@@ -26,6 +26,16 @@ Known current details:
 - Monitor: initially reported solid.
 - Restoration posture: preserve original boards and harnesses where practical, clean/test/repair, avoid irreversible JAMMA-style conversion.
 
+## PPU / ROM notes
+
+Nintendo VS. System game sets are effectively tied to specific PPU variants because the RP2C04 PPUs use different RGB palette mappings. A mismatched PPU may allow a game to run, but it will usually produce incorrect colors.
+
+The current VS. Super Mario Bros. kit is installed with `RP2C04-0004`, which is consistent with the expected PPU family for VS. Super Mario Bros.
+
+Because the cabinet reportedly ran VS. Golf / Stroke & Match Golf earlier, the immediately prior configuration likely used an `RP2C04-0002` PPU, pending confirmation from board photos, parts history, or documentation.
+
+The `RP2A03` / `2A03` remains the CPU/APU. It is not the PPU.
+
 ## Project goals
 
 - Chronicle the build from acquisition through repair and validation.
