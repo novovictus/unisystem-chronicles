@@ -14,6 +14,19 @@ The current working configuration is:
 
 The edge connector and harness show evidence of prior conversion work, including cut or missing wires. That condition should be documented as part of the cabinet's conversion history. It is not currently being treated as a reason to pursue DualSystem restoration.
 
+## Validated `RP2C04-0004` candidates for the current cabinet
+
+This section records only claims validated strongly enough to act on for the current `RP2C04-0004` cabinet path. It intentionally does not reproduce an unverified broad compatibility table.
+
+| Game/path | MAME set name | PPU status for current cabinet | UniSystem posture | Notes | Priority |
+|---|---|---|---|---|---|
+| VS. Ice Climber | `iceclimb` | Direct `RP2C04-0004` match | Good single-game UniSystem burn-and-test candidate | MAME associates `iceclimb` with `PALETTE_2C04_0004`; standard VS ROM/EPROM workflow still needs exact set verification before burning. | High, friction-first |
+| VS. Excitebike, Japan variant | `excitebkj` | Direct `RP2C04-0004` family candidate | Good candidate after exact set verification | MAME's PPU-family notes list Excitebike Japan under `RP2C04-0004`. Treat non-Japan Excitebike variants separately because Excitebike also appears in other PPU contexts. | High, variant-sensitive |
+| VS. Tetris | `vstetris` | Not validated here as a direct `RP2C04-0004` match | Research-only for now | MAME's PPU-family notes list Tetris under `RP2C04-0001` with a caveat that starred games can work with multiple PPU types when DIP settings match the installed PPU. Do not treat the current `RP2C04-0004` as confirmed until exact DIP behavior is verified on hardware or source. | Medium, do not burn yet |
+| VS. Mahjong | `vsmahjng` / Mahjong path | Not a `RP2C04-0004` color match | Low-priority curiosity only | MAME's PPU-family notes place Mahjong in the `RC2C03B` / `RP2C03B` group. Wrong colors are expected with the current `RP2C04-0004`; control and single-player assumptions still need source or hardware validation before documenting as operational guidance. | Low |
+
+Validated practical conclusion: with the current installed `RP2C04-0004`, the clean immediate alternate paths are VS. Ice Climber and the Japan `RP2C04-0004` Excitebike variant. Tetris and Mahjong should remain research notes until their exact PPU, DIP, controls, and board behavior are verified.
+
 ## Platform caveats from external references
 
 These notes are project-specific conclusions from external references. Do not mirror the source tables.
@@ -54,11 +67,11 @@ Immediate friction-first candidates:
 | Friction rank | Title/path | Current blocker | Notes |
 | ---: | --- | --- | --- |
 | 1 | VS. Ice Climber | Correct VS ROM set and EPROM burn | Best next burn-and-test candidate using the current `RP2C04-0004` path. Good validation of dump/burn/install workflow after preserving the current Super Mario Bros. ROMs. |
-| 2 | VS. Excitebike, Japan variant | Exact variant verification | Potentially aligns with the current `RP2C04-0004` path, but Excitebike has variant ambiguity. Do not burn or source until the Japan/`0004`-compatible set is verified. |
+| 2 | VS. Excitebike, Japan variant | Exact variant verification | Aligns with the current `RP2C04-0004` path when using the Japan-compatible set. Do not generalize this to all Excitebike variants. |
 | 3 | VS. Tetris | PPU and DIP behavior verification | Research target only for now. Do not assume current PPU compatibility until the exact variant, PPU behavior, and DIP/color behavior are pinned down. |
-| 4 | VS. Mahjong | PPU path verification | Low-priority curiosity only. Worth touching only if it lines up with current hardware or appears as a cheap test case. |
+| 4 | VS. Mahjong | PPU mismatch and controls verification | Low-priority curiosity only. Expected to have incorrect colors on the current `RP2C04-0004` path; do not treat as a current burn target. |
 
-Working conclusion: VS. Ice Climber is the cleanest next EPROM workflow test once the current Super Mario Bros. ROMs are dumped, labeled, and preserved.
+Working conclusion: VS. Ice Climber is the cleanest next EPROM workflow test once the current Super Mario Bros. ROMs are dumped, labeled, and preserved. The Japan `RP2C04-0004` Excitebike path is the next-best low-friction research candidate if the exact set is verified.
 
 ## Practical restoration scope
 
@@ -194,6 +207,7 @@ Treat it as:
 
 External sources should be consulted at their original URLs. Do not mirror or redistribute external compatibility tables.
 
+- MAME `vsnes.cpp` source, used only as a validation reference for PPU-family notes: https://github.com/mamedev/mame/blob/master/src/mame/nintendo/vsnes.cpp
 - Source boundary notes: [External Source Notes](source-notes.md)
 - PAR / Riemen Nintendo VS. System Chips: https://playchoice.riemen.net/vs_chips.html
 - NESdev VS. System notes: https://www.nesdev.org/wiki/Vs._System
