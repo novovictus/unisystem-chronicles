@@ -22,8 +22,8 @@ This section records only claims validated strongly enough to act on for the cur
 |---|---|---|---|---|---|
 | VS. Ice Climber | `iceclimb` | Direct `RP2C04-0004` match | Good single-game UniSystem burn-and-test candidate | MAME associates `iceclimb` with `PALETTE_2C04_0004`; standard VS ROM/EPROM workflow still needs exact set verification before burning. | High, friction-first |
 | VS. Excitebike, Japan variant | `excitebkj` | Direct `RP2C04-0004` family candidate | Good candidate after exact set verification | MAME's PPU-family notes list Excitebike Japan under `RP2C04-0004`. Treat non-Japan Excitebike variants separately because Excitebike also appears in other PPU contexts. | High, variant-sensitive |
-| VS. Tetris | `vstetris` | Not validated here as a direct `RP2C04-0004` match | Research-only for now | MAME's PPU-family notes list Tetris under `RP2C04-0001` with a caveat that starred games can work with multiple PPU types when DIP settings match the installed PPU. Do not treat the current `RP2C04-0004` as confirmed until exact DIP behavior is verified on hardware or source. | Medium, do not burn yet |
-| VS. Mahjong | `vsmahjng` / Mahjong path | Not a `RP2C04-0004` color match | Low-priority curiosity only | MAME's PPU-family notes place Mahjong in the `RC2C03B` / `RP2C03B` group. Wrong colors are expected with the current `RP2C04-0004`; control and single-player assumptions still need source or hardware validation before documenting as operational guidance. | Low |
+| VS. Tetris | `vstetris` | Not validated here as a direct `RP2C04-0004` match | Research and test-notes only for now | MAME's PPU-family notes list Tetris under `RP2C04-0001` with a caveat that starred games can work with multiple PPU types when DIP settings match the installed PPU. Capture the suggested DIP setting for later testing, but do not treat the current `RP2C04-0004` as confirmed until hardware output is verified. | Medium, do not burn yet |
+| VS. Mahjong | `vsmahjng` / Mahjong path | Not a `RP2C04-0004` color match | Low-priority verification candidate only | MAME's PPU-family notes place Mahjong in the `RC2C03B` / `RP2C03B` group. Wrong colors are expected with the current `RP2C04-0004`; single-player and controller-input behavior are explicitly to be verified before being treated as operational guidance. | Low |
 
 Validated practical conclusion: with the current installed `RP2C04-0004`, the clean immediate alternate paths are VS. Ice Climber and the Japan `RP2C04-0004` Excitebike variant. Tetris and Mahjong should remain research notes until their exact PPU, DIP, controls, and board behavior are verified.
 
@@ -68,8 +68,8 @@ Immediate friction-first candidates:
 | ---: | --- | --- | --- |
 | 1 | VS. Ice Climber | Correct VS ROM set and EPROM burn | Best next burn-and-test candidate using the current `RP2C04-0004` path. Good validation of dump/burn/install workflow after preserving the current Super Mario Bros. ROMs. |
 | 2 | VS. Excitebike, Japan variant | Exact variant verification | Aligns with the current `RP2C04-0004` path when using the Japan-compatible set. Do not generalize this to all Excitebike variants. |
-| 3 | VS. Tetris | PPU and DIP behavior verification | Research target only for now. Do not assume current PPU compatibility until the exact variant, PPU behavior, and DIP/color behavior are pinned down. |
-| 4 | VS. Mahjong | PPU mismatch and controls verification | Low-priority curiosity only. Expected to have incorrect colors on the current `RP2C04-0004` path; do not treat as a current burn target. |
+| 3 | VS. Tetris | PPU and DIP behavior verification | Research target only for now. Capture suggested DIP settings for later testing, but do not assume current PPU compatibility until the exact variant, PPU behavior, and color behavior are pinned down. |
+| 4 | VS. Mahjong | PPU mismatch and controls verification | Low-priority curiosity only. Expected to have incorrect colors on the current `RP2C04-0004` path; single-player mode and joystick/button control mapping remain to be verified. |
 
 Working conclusion: VS. Ice Climber is the cleanest next EPROM workflow test once the current Super Mario Bros. ROMs are dumped, labeled, and preserved. The Japan `RP2C04-0004` Excitebike path is the next-best low-friction research candidate if the exact set is verified.
 
@@ -143,7 +143,22 @@ Working notes:
 
 - Treat Tetris as a title requiring PPU and DIP-switch verification rather than assuming a single fixed PPU path.
 - External references indicate Tetris can work with more than one PPU path and may include DIP color-setting behavior.
+- Capture the suggested DIP setting for later hardware testing with `RP2C04-0004`: DIP 5 = ON, DIP 6 = OFF, DIP 7 = ON, DIP 8 = test/verify. This is a test note, not a validated cabinet setting.
 - Before buying hardware specifically for Tetris, verify the exact VS title variant, required PPU, board population, DIP expectations, and whether the available hardware is original, repro, modified, or part of another conversion path.
+
+## Mahjong verification notes
+
+VS. Mahjong is a low-priority verification item only.
+
+Working notes to verify before treating Mahjong as operationally documented:
+
+- Whether the available Mahjong ROM path can run usefully in single-player on one side of a UniSystem-style setup.
+- Whether the CPU-opponent assumption is correct for the specific ROM path being tested.
+- Whether joystick plus button input is sufficient for tile selection, discard, and command selection.
+- Whether Up/Down command navigation for actions such as Pon, Chi, or related prompts is correct.
+- Expected color mismatch when using the current `RP2C04-0004`, since the referenced Mahjong path is associated with the `RC2C03B` / `RP2C03B` group.
+
+Do not describe Mahjong as a clean current-cabinet recommendation until single-player mode, controls, DIP behavior, and color output are verified on hardware or a stronger source.
 
 ## Tertiary target: VS. Castlevania
 
