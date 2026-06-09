@@ -36,6 +36,30 @@ These priorities describe restoration and acquisition intent for this cabinet. T
 | Tertiary targets | VS. Ice Climber; VS. Castlevania | Interesting future candidates, but acquisition should remain opportunistic. |
 | Last-tier targets | VS. Excitebike; VS. Mahjong | Low-priority interest only. Do not drive sourcing decisions unless parts appear cheaply or as part of a larger lot. |
 
+## Current low-friction paths
+
+This list is friction-first, not priority-first. It assumes the cabinet currently has only one available PPU, `RP2C04-0004`, and that no daughterboard-required, DualSystem-only, or light-gun-dependent paths are in scope for immediate testing.
+
+Excluded from this immediate list:
+
+- VS. Super Mario Bros.: already installed.
+- VS. Duck Hunt: requires a 2C03-family PPU, light gun, and gun wiring path; stretch goal for now.
+- VS. Dr. Mario: requires `RP2C04-0003` and daughterboard support.
+- VS. Castlevania: requires different PPU and likely Konami daughterboard support.
+- VS. Ice Climber Dual: DualSystem-style behavior is outside current scope.
+- VS. Clu Clu Land and VS. R.B.I. Baseball: not current target titles.
+
+Immediate friction-first candidates:
+
+| Friction rank | Title/path | Current blocker | Notes |
+| ---: | --- | --- | --- |
+| 1 | VS. Ice Climber | Correct VS ROM set and EPROM burn | Best next burn-and-test candidate using the current `RP2C04-0004` path. Good validation of dump/burn/install workflow after preserving the current Super Mario Bros. ROMs. |
+| 2 | VS. Excitebike, Japan variant | Exact variant verification | Potentially aligns with the current `RP2C04-0004` path, but Excitebike has variant ambiguity. Do not burn or source until the Japan/`0004`-compatible set is verified. |
+| 3 | VS. Tetris | PPU and DIP behavior verification | Research target only for now. Do not assume current PPU compatibility until the exact variant, PPU behavior, and DIP/color behavior are pinned down. |
+| 4 | VS. Mahjong | PPU path verification | Low-priority curiosity only. Worth touching only if it lines up with current hardware or appears as a cheap test case. |
+
+Working conclusion: VS. Ice Climber is the cleanest next EPROM workflow test once the current Super Mario Bros. ROMs are dumped, labeled, and preserved.
+
 ## Practical restoration scope
 
 The near-term electrical goal is a clean, reliable UniSystem path:
@@ -57,10 +81,10 @@ Potential cabinet-relevant targets for this PPU group include:
 | Title | Notes |
 | --- | --- |
 | VS. Super Mario Bros. | Current installed target and first-choice reason for acquiring the cabinet. |
-| VS. Ice Climber | Same PPU group; tertiary target. |
+| VS. Ice Climber | Same PPU group; tertiary target and current lowest-friction alternate title. |
 | VS. Ice Climber Dual | Same PPU group, but dual-game behavior should not drive this UniSystem restoration. |
 | VS. Clu Clu Land | Same PPU group; not currently a priority target. |
-| VS. Excitebike, Japan variant | Same PPU group; last-tier target. |
+| VS. Excitebike, Japan variant | Same PPU group; last-tier target and variant-sensitive low-friction candidate. |
 | VS. R.B.I. Baseball | Same PPU group; not currently a priority target. |
 
 These are the most practical low-friction EPROM candidates because they align with the PPU already installed. Board population, ROM socket layout, daughterboards, controls, and DIP settings still need to be verified per title.
