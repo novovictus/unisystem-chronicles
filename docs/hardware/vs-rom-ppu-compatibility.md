@@ -2,6 +2,8 @@
 
 This cabinet is being documented as a Nintendo VS. UniSystem upright, not as a DualSystem restoration and not as an NES-console compatibility project.
 
+This file contains cabinet-specific working notes. It is not a mirror of any external compatibility table.
+
 The current working configuration is:
 
 - Cabinet: original orange Nintendo cabinet, likely Donkey Kong Jr. origin.
@@ -28,7 +30,7 @@ ROM work should stay documentation-only in this repository. Do not commit ROM im
 
 The installed `RP2C04-0004` matches the current VS. Super Mario Bros. configuration.
 
-Potential compatible ROM targets for this PPU group include:
+Potential cabinet-relevant targets for this PPU group include:
 
 | Title | Notes |
 | --- | --- |
@@ -70,6 +72,12 @@ Expected acquisition and validation checklist:
 
 Dr. Mario is not part of the current `RP2C04-0004` Super Mario Bros. group.
 
+## Reference-only target: VS. Platoon
+
+VS. Platoon is not a current restoration target. It is tracked only because modern Dr. Mario / Platoon combination daughtercards exist, and those boards may be useful to study as contemporary repro or compatibility hardware.
+
+Do not infer that Dr. Mario and Platoon share a clean original PPU path without hardware verification. If a combination daughtercard is acquired, document the installed PPU, ROM contents privately, daughtercard logic, color output, and any palette compromise.
+
 ## PPU sourcing priorities
 
 The useful acquisition order for this cabinet is:
@@ -79,7 +87,7 @@ The useful acquisition order for this cabinet is:
 | 1 | `RC2C03B` or compatible 2C03-family VS RGB PPU | Enables the Duck Hunt path when paired with the correct ROM set and gun wiring. |
 | 2 | `RP2C04-0003` | Enables the Dr. Mario PPU path. |
 | 3 | `MDS-VS1-01` daughterboard | Likely needed for Dr. Mario depending on the board setup. |
-| 4 | `RP2C04-0002` | Useful for reconstructing the likely earlier VS. Golf / Stroke & Match Golf era. |
+| 4 | `RP2C04-0002` | Useful for reconstructing the likely earlier VS. Golf / Stroke Match Golf era. |
 | 5 | Other `RP2C04` variants | Opens additional VS title groups, but should not distract from the Duck Hunt and Dr. Mario targets. |
 
 EPROM programming is expected to be easier than sourcing correct PPUs and any required title-specific hardware.
@@ -102,6 +110,9 @@ Treat it as:
 
 ## Reference links
 
+External sources should be consulted at their original URLs. Do not mirror or redistribute external compatibility tables.
+
+- Source boundary notes: [External Source Notes](source-notes.md)
+- PAR / Riemen Nintendo VS. System Chips: https://playchoice.riemen.net/vs_chips.html
 - NESdev VS. System notes: https://www.nesdev.org/wiki/Vs._System
-- VS / PlayChoice chipset list: https://playchoice.riemen.net/vs_chips.html
 - John's Arcade Nintendo VS PPU info: https://www.johnsarcade.com/nintendo_vs_ppu_info.php
