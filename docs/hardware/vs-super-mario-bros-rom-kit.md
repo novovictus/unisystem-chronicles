@@ -1,6 +1,6 @@
 # VS. Super Mario Bros. ROM Kit State
 
-This note records the current known state of the VS. Super Mario Bros. kit installed in the UniSystem board. It is based on direct board inspection and photo review. No ROM binaries are stored in this repository.
+This note records the current known state of the VS. Super Mario Bros. kit installed in the UniSystem board. It is based on direct board inspection, photo review, and the per-chip EPROM inventory captured from the kit. No ROM binaries are stored in this repository.
 
 ## Current identification
 
@@ -38,6 +38,21 @@ MDS-SM4_1Dor6D.bin
 MDS-SM4_2Aor8A.bin
 MDS-SM4_2Bor8B.bin
 ```
+
+## Physical EPROM population
+
+The kit is not populated with six identical EPROM devices. The current observed population is:
+
+| Sticker | Manufacturer | Chip body marking |
+|---|---|---|
+| `MDS-SM4 1Aor6A` | Intel | `D2764A`, `U4120008S`, `PGM@12.5V`, `(c)INTEL '83` |
+| `MDS-SM4 1Bor6B` | Intel | `D2764A-3`, `U40522725`, `PGM@12.5V`, `(c)INTEL '83` |
+| `MDS-SM4 1Cor6C` | Intel | `D2764A-3`, `U4052269S`, `PGM@12.5V`, `(c)INTEL '83` |
+| `MDS-SM4 1Dor6D` | Intel | `D2764A-3`, `U3491199S`, `PGM@12.5V`, `(c)INTEL '83` |
+| `MDS-SM4 2Aor8A` | Mitsubishi | `M5L2764K`, `8413AM`, `JAPAN` |
+| `MDS-SM4 2Bor8B` | Mitsubishi | `M5L2764K`, `8414A1`, `JAPAN` |
+
+See [`vs-super-mario-bros-chip-inventory.md`](vs-super-mario-bros-chip-inventory.md) for the dedicated per-chip inventory.
 
 ## Expected MAME-style hashes
 
