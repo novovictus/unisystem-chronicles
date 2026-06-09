@@ -14,6 +14,16 @@ The current working configuration is:
 
 The edge connector and harness show evidence of prior conversion work, including cut or missing wires. That condition should be documented as part of the cabinet's conversion history. It is not currently being treated as a reason to pursue DualSystem restoration.
 
+## Platform caveats from external references
+
+These notes are project-specific conclusions from external references. Do not mirror the source tables.
+
+- A UniSystem is expected to run one game path at a time. Do not pursue DualSystem behavior unless later cabinet evidence requires it.
+- Games using 8 or 12 ROMs should be treated as possible DualSystem-only candidates until verified otherwise.
+- `RP2C04` PPUs can be physically/functionally interchangeable in some cases, but palette output changes and may be wrong.
+- The VS RGB PPU family matters. `2C03`, `2C04`, and `2C05` paths are not interchangeable assumptions.
+- Some titles, especially Tetris and Duck Hunt, have looser PPU behavior than a simple one-title/one-PPU rule suggests, so exact board photos, chip markings, DIP settings, and output validation matter.
+
 ## Title priority tiers
 
 These priorities describe restoration and acquisition intent for this cabinet. They are not a general VS. System ranking.
@@ -22,7 +32,7 @@ These priorities describe restoration and acquisition intent for this cabinet. T
 | --- | --- | --- |
 | Acquired / first-choice target | VS. Super Mario Bros. | Main reason the cabinet was acquired. Current installed game path. |
 | Primary future targets | VS. Dr. Mario; VS. Duck Hunt | Main expansion goals. Worth sourcing specific PPUs, daughterboards, gun hardware, and related board parts. |
-| Secondary target | VS. Tetris | Worth tracking as a future title, but not ahead of Dr. Mario or Duck Hunt. Requires compatibility verification before buying hardware. |
+| Secondary target | VS. Tetris | Worth tracking as a future title, but not ahead of Dr. Mario or Duck Hunt. Has PPU/DIP nuance; verify before buying. |
 | Tertiary targets | VS. Ice Climber; VS. Castlevania | Interesting future candidates, but acquisition should remain opportunistic. |
 | Last-tier targets | VS. Excitebike; VS. Mahjong | Low-priority interest only. Do not drive sourcing decisions unless parts appear cheaply or as part of a larger lot. |
 
@@ -62,13 +72,17 @@ VS. Duck Hunt should be tracked as a primary future hardware expansion target, n
 Expected acquisition and validation checklist:
 
 - VS. Duck Hunt ROM set for private preservation and EPROM programming
-- `RC2C03B` or compatible 2C03-family VS RGB PPU
+- `RC2C03B`, `RP2C03B`, `RC2C03C`, or another verified compatible 2C03-family VS RGB PPU
 - VS light gun
 - gun input wiring verification or restoration
 - CRT timing, brightness, and gun response validation
 - DIP switch verification
 
-The current `RP2C04-0004` Super Mario Bros. setup is not the expected Duck Hunt PPU path.
+Additional caveats:
+
+- Duck Hunt requires a gun path; it may alarm or fail operationally if no gun is present.
+- External references indicate Duck Hunt existed with multiple 2C03-family PPU variants, so do not reject a Duck Hunt board solely because the PPU is not `RC2C03B` if the rest of the evidence is consistent.
+- The current `RP2C04-0004` Super Mario Bros. setup is not the expected Duck Hunt PPU path.
 
 ## Future primary target: VS. Dr. Mario
 
@@ -88,13 +102,32 @@ Dr. Mario is not part of the current `RP2C04-0004` Super Mario Bros. group.
 
 VS. Tetris is a secondary future target. It should be tracked, but it should not pull sourcing effort away from Dr. Mario or Duck Hunt.
 
-Before buying hardware specifically for Tetris, verify the exact VS title variant, required PPU, board population, and whether the available hardware is original, repro, modified, or part of another conversion path.
+Working notes:
 
-## Tertiary and low-priority targets
+- Treat Tetris as a title requiring PPU and DIP-switch verification rather than assuming a single fixed PPU path.
+- External references indicate Tetris can work with more than one PPU path and may include DIP color-setting behavior.
+- Before buying hardware specifically for Tetris, verify the exact VS title variant, required PPU, board population, DIP expectations, and whether the available hardware is original, repro, modified, or part of another conversion path.
 
-VS. Ice Climber and VS. Castlevania are tertiary targets. They are worth documenting and may be worth pursuing if compatible parts appear cheaply or as part of a useful board lot.
+## Tertiary target: VS. Castlevania
+
+VS. Castlevania is a tertiary target.
+
+Working notes:
+
+- Track `RP2C04-0002` as the likely PPU path for Castlevania.
+- Track Konami daughterboard requirements before buying a loose ROM set.
+- A Top Gun donor path may be relevant only as a comparative or conversion note; verify before sourcing because Top Gun itself is a different PPU/security path.
+
+## Other tertiary and low-priority targets
+
+VS. Ice Climber is a tertiary target and remains interesting because it is in the current `RP2C04-0004` group.
 
 VS. Excitebike and VS. Mahjong are last-tier targets. They should not drive acquisition unless the parts overlap with higher-priority goals or appear opportunistically.
+
+Working notes:
+
+- Excitebike appears in more than one VS context. Track exact variant and PPU before sourcing.
+- Mahjong appears in external references near the 2C03-family grouping. Treat it as a low-priority verification item, not a purchase driver.
 
 ## Reference-only target: VS. Platoon
 
@@ -108,11 +141,11 @@ The useful acquisition order for this cabinet is:
 
 | Priority | Part | Why it matters |
 | --- | --- | --- |
-| 1 | `RC2C03B` or compatible 2C03-family VS RGB PPU | Enables the Duck Hunt path when paired with the correct ROM set and gun wiring. |
+| 1 | Verified 2C03-family VS RGB PPU for Duck Hunt | Enables the Duck Hunt path when paired with the correct ROM set and gun wiring. |
 | 2 | `RP2C04-0003` | Enables the Dr. Mario PPU path. |
 | 3 | `MDS-VS1-01` daughterboard | Likely needed for Dr. Mario depending on the board setup. |
 | 4 | Tetris-specific PPU / board requirements | Secondary target; verify exact requirements before sourcing. |
-| 5 | `RP2C04-0002` | Useful for reconstructing the likely earlier VS. Golf / Stroke Match Golf era. |
+| 5 | `RP2C04-0002` | Useful for Castlevania and reconstructing the likely earlier VS. Golf / Stroke Match Golf era. |
 | 6 | Other `RP2C04` variants | Opens additional VS title groups, but should not distract from the primary targets. |
 
 EPROM programming is expected to be easier than sourcing correct PPUs and any required title-specific hardware.
