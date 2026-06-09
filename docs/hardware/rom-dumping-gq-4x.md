@@ -81,28 +81,43 @@ RP2C04
 6. Mark each chip orientation in your notes. Pin 1 orientation matters.
 7. Remove only one ROM at a time unless you have already photographed and mapped every socket.
 
-## Per-chip inventory
+## Observed per-chip EPROM inventory
 
 Each socket position may contain a different manufacturer or EPROM device even when the Nintendo sticker family is consistent. Record both the Nintendo sticker text and the actual chip body marking for every ROM before choosing the GQUSBprg device profile.
 
-Use this working table while inspecting the chips:
+Current observed devices:
 
-| Socket label | Sticker text | Chip body manufacturer | Chip body part number | Speed/date/lot marks | Window covered | Device profile used | Notes |
-|---|---|---|---|---|---|---|---|
-| 1A or 6A | `MDS-SM4 1Aor6A` |  |  |  | yes/no |  |  |
-| 1B or 6B | `MDS-SM4 1Bor6B` |  |  |  | yes/no |  |  |
-| 1C or 6C | `MDS-SM4 1Cor6C` |  |  |  | yes/no |  |  |
-| 1D or 6D | `MDS-SM4 1Dor6D` |  |  |  | yes/no |  |  |
-| 2A or 8A | `MDS-SM4 2Aor8A` |  |  |  | yes/no |  |  |
-| 2B or 8B | `MDS-SM4 2Bor8B` |  |  |  | yes/no |  |  |
+| Socket label | Sticker text | Manufacturer | Chip body part number | Additional body marks | Expected GQUSBprg profile class | Notes |
+|---|---|---|---|---|---|---|
+| 1A or 6A | `MDS-SM4 1Aor6A` | Intel | `D2764A` | `U4120008S`; `PGM@12.5V`; `(c)INTEL '83` | Intel `D2764A` or compatible `2764` / `27C64` | 8 KiB UV EPROM |
+| 1B or 6B | `MDS-SM4 1Bor6B` | Intel | `D2764A-3` | `U40522725`; `PGM@12.5V`; `(c)INTEL '83` | Intel `D2764A-3` or compatible `2764` / `27C64` | 8 KiB UV EPROM |
+| 1C or 6C | `MDS-SM4 1Cor6C` | Intel | `D2764A-3` | `U4052269S`; `PGM@12.5V`; `(c)INTEL '83` | Intel `D2764A-3` or compatible `2764` / `27C64` | 8 KiB UV EPROM |
+| 1D or 6D | `MDS-SM4 1Dor6D` | Intel | `D2764A-3` | `U3491199S`; `PGM@12.5V`; `(c)INTEL '83` | Intel `D2764A-3` or compatible `2764` / `27C64` | 8 KiB UV EPROM |
+| 2A or 8A | `MDS-SM4 2Aor8A` | Mitsubishi | `M5L2764K` | `8413AM`; `JAPAN` | Mitsubishi `M5L2764K` or compatible `2764` / `27C64` | 8 KiB UV EPROM |
+| 2B or 8B | `MDS-SM4 2Bor8B` | Mitsubishi | `M5L2764K` | `8414A1`; `JAPAN` | Mitsubishi `M5L2764K` or compatible `2764` / `27C64` | 8 KiB UV EPROM |
 
-Do not assume all six chips are the same silicon. Use the chip body part number when selecting the programmer profile. If the sticker hides the body marking and removing it would damage provenance, do not peel the sticker just for convenience. Record the marking as blocked by label and use a conservative read-only profile consistent with the expected 8 KiB dump size.
+Do not assume all six chips are the same silicon. Use the chip body part number when selecting the programmer profile. If the exact manufacturer profile is not available in GQUSBprg, use a compatible 2764 / 27C64 read-only profile and record the exact profile used.
 
 ## Device selection
 
-The expected ROM size is 8192 bytes, so the chips are in the 2764 / 27C64 class unless inspection proves otherwise.
+The observed chips are all 2764-class 8 KiB UV EPROMs:
 
-Use the exact manufacturer/device marking from each chip body if readable. If the label blocks the marking and you do not want to disturb the label, start with a generic compatible 2764 / 27C64 read-only profile in GQUSBprg.
+```text
+Intel D2764A
+Intel D2764A-3
+Mitsubishi M5L2764K
+```
+
+Use the closest exact manufacturer/device profile available in GQUSBprg for each chip:
+
+```text
+MDS-SM4 1Aor6A -> Intel D2764A, or compatible 2764 / 27C64
+MDS-SM4 1Bor6B -> Intel D2764A-3, or compatible 2764 / 27C64
+MDS-SM4 1Cor6C -> Intel D2764A-3, or compatible 2764 / 27C64
+MDS-SM4 1Dor6D -> Intel D2764A-3, or compatible 2764 / 27C64
+MDS-SM4 2Aor8A -> Mitsubishi M5L2764K, or compatible 2764 / 27C64
+MDS-SM4 2Bor8B -> Mitsubishi M5L2764K, or compatible 2764 / 27C64
+```
 
 Expected read profile class:
 
@@ -112,7 +127,7 @@ EPROM 2764 / 27C64
 DIP-28
 ```
 
-Do not use a 27128, 27256, or larger profile unless the physical chip marking proves the device is larger. A larger profile can produce extra data that is not the expected MAME dump shape.
+Do not use a 27128, 27256, or larger profile for these observed chips. A larger profile can produce extra data that is not the expected MAME dump shape.
 
 ## GQUSBprg read procedure
 
@@ -120,7 +135,7 @@ For each ROM:
 
 1. Open GQUSBprg.
 2. Select the GQ-4X programmer.
-3. Select the device profile matching that specific physical EPROM, expected `2764` / `27C64` class unless the chip marking proves otherwise.
+3. Select the device profile matching that specific physical EPROM, using the observed inventory above.
 4. Record the exact device profile used in the per-chip inventory.
 5. Confirm the software shows an 8 KiB / `0x2000` device size.
 6. Insert the EPROM in the ZIF socket with correct pin 1 orientation.
