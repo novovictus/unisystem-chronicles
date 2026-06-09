@@ -81,11 +81,28 @@ RP2C04
 6. Mark each chip orientation in your notes. Pin 1 orientation matters.
 7. Remove only one ROM at a time unless you have already photographed and mapped every socket.
 
+## Per-chip inventory
+
+Each socket position may contain a different manufacturer or EPROM device even when the Nintendo sticker family is consistent. Record both the Nintendo sticker text and the actual chip body marking for every ROM before choosing the GQUSBprg device profile.
+
+Use this working table while inspecting the chips:
+
+| Socket label | Sticker text | Chip body manufacturer | Chip body part number | Speed/date/lot marks | Window covered | Device profile used | Notes |
+|---|---|---|---|---|---|---|---|
+| 1A or 6A | `MDS-SM4 1Aor6A` |  |  |  | yes/no |  |  |
+| 1B or 6B | `MDS-SM4 1Bor6B` |  |  |  | yes/no |  |  |
+| 1C or 6C | `MDS-SM4 1Cor6C` |  |  |  | yes/no |  |  |
+| 1D or 6D | `MDS-SM4 1Dor6D` |  |  |  | yes/no |  |  |
+| 2A or 8A | `MDS-SM4 2Aor8A` |  |  |  | yes/no |  |  |
+| 2B or 8B | `MDS-SM4 2Bor8B` |  |  |  | yes/no |  |  |
+
+Do not assume all six chips are the same silicon. Use the chip body part number when selecting the programmer profile. If the sticker hides the body marking and removing it would damage provenance, do not peel the sticker just for convenience. Record the marking as blocked by label and use a conservative read-only profile consistent with the expected 8 KiB dump size.
+
 ## Device selection
 
 The expected ROM size is 8192 bytes, so the chips are in the 2764 / 27C64 class unless inspection proves otherwise.
 
-Use the exact manufacturer/device marking from the chip body if readable. If the label blocks the marking and you do not want to disturb the label, start with a generic compatible 2764 / 27C64 read-only profile in GQUSBprg.
+Use the exact manufacturer/device marking from each chip body if readable. If the label blocks the marking and you do not want to disturb the label, start with a generic compatible 2764 / 27C64 read-only profile in GQUSBprg.
 
 Expected read profile class:
 
@@ -103,14 +120,15 @@ For each ROM:
 
 1. Open GQUSBprg.
 2. Select the GQ-4X programmer.
-3. Select the device profile matching the physical EPROM, expected `2764` / `27C64` class.
-4. Confirm the software shows an 8 KiB / `0x2000` device size.
-5. Insert the EPROM in the ZIF socket with correct pin 1 orientation.
-6. Lock the ZIF socket.
-7. Use `Read` to read the device into the buffer.
-8. Save the buffer as a binary file using the label-preserving filename.
-9. Remove the chip and return it to its original socket or a labeled antistatic-safe location.
-10. Repeat for the remaining ROMs.
+3. Select the device profile matching that specific physical EPROM, expected `2764` / `27C64` class unless the chip marking proves otherwise.
+4. Record the exact device profile used in the per-chip inventory.
+5. Confirm the software shows an 8 KiB / `0x2000` device size.
+6. Insert the EPROM in the ZIF socket with correct pin 1 orientation.
+7. Lock the ZIF socket.
+8. Use `Read` to read the device into the buffer.
+9. Save the buffer as a binary file using the label-preserving filename.
+10. Remove the chip and return it to its original socket or a labeled antistatic-safe location.
+11. Repeat for the remaining ROMs.
 
 First pass output:
 
@@ -123,7 +141,7 @@ raw-read-1/MDS-SM4_2Aor8A.bin
 raw-read-1/MDS-SM4_2Bor8B.bin
 ```
 
-Then perform a second independent read of every chip into `raw-read-2/` using the same filenames.
+Then perform a second independent read of every chip into `raw-read-2/` using the same filenames and the same per-chip device profile recorded during the first pass.
 
 ## Verification workflow
 
@@ -151,7 +169,7 @@ fc /b raw-read-1\MDS-SM4_2Aor8A.bin raw-read-2\MDS-SM4_2Aor8A.bin
 fc /b raw-read-1\MDS-SM4_2Bor8B.bin raw-read-2\MDS-SM4_2Bor8B.bin
 ```
 
-No differences means the repeated reads are stable. If any file differs between reads, clean and reseat the chip, confirm device selection, and perform another read before comparing against MAME hashes.
+No differences means the repeated reads are stable. If any file differs between reads, clean and reseat the chip, confirm the per-chip device selection, and perform another read before comparing against MAME hashes.
 
 ## MAME-style hash generation
 
@@ -215,10 +233,15 @@ Suggested manifest fields:
 Dump date:
 Programmer: GQ-4X
 Software: GQUSBprg, version unknown unless recorded
-Device profile used: 2764 / 27C64 class, exact profile to be recorded
 Board: Nintendo MDS-01-CPU
 PPU: RP2C04-0004, marking 4L3 21
 ROM label:
+Socket label:
+Sticker text:
+Chip body manufacturer:
+Chip body part number:
+Chip body speed/date/lot marks:
+Device profile used:
 Filename:
 Read pass 1 CRC32:
 Read pass 1 SHA1:
