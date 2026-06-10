@@ -4,6 +4,8 @@ This file tracks ordered consumables for Nintendo VS. UniSystem ROM preservation
 
 ROM images and commercial game binaries must not be committed to this repository. This file documents physical parts, handling workflow, and validation notes only.
 
+Scope: this note is limited to the current VS. UniSystem board-side DIP-28 workflow.
+
 ## Ordered parts
 
 ### 27C256 EPROM test stock
