@@ -14,6 +14,19 @@ The current working configuration is:
 
 The edge connector and harness show evidence of prior conversion work, including cut or missing wires. That condition should be documented as part of the cabinet's conversion history. It is not currently being treated as a reason to pursue DualSystem restoration.
 
+## Current EPROM test batch, 2026-06-10
+
+This batch records ROM sets available for private EPROM programming and hardware validation with the currently installed `RP2C04-0004` PPU. ROM binaries are not stored in this repository.
+
+| ZIP / set | Title/path | Current `RP2C04-0004` posture | Test priority | Bench expectation |
+| --- | --- | --- | --- | --- |
+| `iceclimb.zip` / `iceclimb` | VS. Ice Climber | Direct `RP2C04-0004` match | Burn/test first | Expected clean color path if ROM placement, EPROM type, and DIP settings are correct. |
+| `excitebkj.zip` / `excitebkj` | VS. Excitebike, Japan variant | Direct `RP2C04-0004` match | Burn/test first | Expected clean color path for the Japan variant. Do not generalize this to every Excitebike set. |
+| `vstetris.zip` / `vstetris` | VS. Tetris | Compatibility-test candidate, not a clean one-PPU assumption | Burn/test after the direct matches | External notes indicate Tetris can work across more than one PPU path with DIP/color behavior. Validate actual color output on hardware. |
+| `vsmahjng.zip` / `vsmahjng` | VS. Mahjong | Not a normal `RP2C04-0004` UniSystem target | Document only unless intentionally testing edge cases | Expected PPU/color mismatch and possible DualSystem/control assumptions. Keep out of the first clean test pass. |
+
+Batch conclusion: the active burn/test batch is `iceclimb`, `excitebkj`, and `vstetris`. `vsmahjng` is retained as a documented reference/edge-case candidate, not as a clean current-cabinet recommendation.
+
 ## Validated `RP2C04-0004` candidates for the current cabinet
 
 This section records only claims validated strongly enough to act on for the current `RP2C04-0004` cabinet path. It intentionally does not reproduce an unverified broad compatibility table.
@@ -22,10 +35,10 @@ This section records only claims validated strongly enough to act on for the cur
 |---|---|---|---|---|---|
 | VS. Ice Climber | `iceclimb` | Direct `RP2C04-0004` match | Good single-game UniSystem burn-and-test candidate | MAME associates `iceclimb` with `PALETTE_2C04_0004`; standard VS ROM/EPROM workflow still needs exact set verification before burning. | High, friction-first |
 | VS. Excitebike, Japan variant | `excitebkj` | Direct `RP2C04-0004` family candidate | Good candidate after exact set verification | MAME's PPU-family notes list Excitebike Japan under `RP2C04-0004`. Treat non-Japan Excitebike variants separately because Excitebike also appears in other PPU contexts. | High, variant-sensitive |
-| VS. Tetris | `vstetris` | Not validated here as a direct `RP2C04-0004` match | Research and test-notes only for now | MAME's PPU-family notes list Tetris under `RP2C04-0001` with a caveat that starred games can work with multiple PPU types when DIP settings match the installed PPU. Capture the suggested DIP setting for later testing, but do not treat the current `RP2C04-0004` as confirmed until hardware output is verified. | Medium, do not burn yet |
-| VS. Mahjong | `vsmahjng` / Mahjong path | Not a `RP2C04-0004` color match | Low-priority verification candidate only | MAME's PPU-family notes place Mahjong in the `RC2C03B` / `RP2C03B` group. Wrong colors are expected with the current `RP2C04-0004`; single-player and controller-input behavior are explicitly to be verified before being treated as operational guidance. | Low |
+| VS. Tetris | `vstetris` | Compatibility-test candidate with `RP2C04-0004`; not treated as a clean fixed-PPU match | Burn-and-test candidate after direct matches | MAME's PPU-family notes list Tetris under `RP2C04-0001` with a caveat that starred games can work with multiple PPU types when DIP settings match the installed PPU. John's Arcade and PAR/Riemen notes also support multi-PPU behavior for some titles. Validate actual color output on this cabinet. | Medium, test batch |
+| VS. Mahjong | `vsmahjng` / Mahjong path | Not a `RP2C04-0004` color match | Low-priority verification candidate only | MAME's PPU-family notes place Mahjong in the `RC2C03B` / `RP2C03B` group. Wrong colors are expected with the current `RP2C04-0004`; single-player and controller-input behavior are explicitly to be verified before being treated as operational guidance. | Low, reference only |
 
-Validated practical conclusion: with the current installed `RP2C04-0004`, the clean immediate alternate paths are VS. Ice Climber and the Japan `RP2C04-0004` Excitebike variant. Tetris and Mahjong should remain research notes until their exact PPU, DIP, controls, and board behavior are verified.
+Validated practical conclusion: with the current installed `RP2C04-0004`, the clean immediate alternate paths are VS. Ice Climber and the Japan `RP2C04-0004` Excitebike variant. VS. Tetris is now part of the test batch because external notes support multi-PPU/DIP behavior, but it remains a hardware-output validation item rather than a native 0004 claim. Mahjong remains a documented edge case until exact PPU, controls, board behavior, and single-side behavior are verified.
 
 ## Platform caveats from external references
 
@@ -45,9 +58,9 @@ These priorities describe restoration and acquisition intent for this cabinet. T
 | --- | --- | --- |
 | Acquired / first-choice target | VS. Super Mario Bros. | Main reason the cabinet was acquired. Current installed game path. |
 | Primary future targets | VS. Dr. Mario; VS. Duck Hunt | Main expansion goals. Worth sourcing specific PPUs, daughterboards, gun hardware, and related board parts. |
-| Secondary target | VS. Tetris | Worth tracking as a future title, but not ahead of Dr. Mario or Duck Hunt. Has PPU/DIP nuance; verify before buying. |
-| Tertiary targets | VS. Ice Climber; VS. Castlevania | Interesting future candidates, but acquisition should remain opportunistic. |
-| Last-tier targets | VS. Excitebike; VS. Mahjong | Low-priority interest only. Do not drive sourcing decisions unless parts appear cheaply or as part of a larger lot. |
+| Secondary target | VS. Tetris | Worth tracking and now part of the current test batch, but not ahead of Dr. Mario or Duck Hunt for sourcing. Has PPU/DIP nuance; verify color output on hardware. |
+| Tertiary targets | VS. Ice Climber; VS. Castlevania | Ice Climber is in the current test batch because it is a clean `RP2C04-0004` path. Castlevania remains opportunistic. |
+| Last-tier targets | VS. Excitebike; VS. Mahjong | Excitebike Japan is in the current test batch because it aligns with `RP2C04-0004`. Mahjong remains low-priority/reference unless testing edge cases. |
 
 ## Current low-friction paths
 
@@ -61,6 +74,7 @@ Excluded from this immediate list:
 - VS. Castlevania: requires different PPU and likely Konami daughterboard support.
 - VS. Ice Climber Dual: DualSystem-style behavior is outside current scope.
 - VS. Clu Clu Land and VS. R.B.I. Baseball: not current target titles.
+- VS. Mahjong: retained as a reference/edge-case candidate, not a clean first-pass test.
 
 Immediate friction-first candidates:
 
@@ -68,10 +82,10 @@ Immediate friction-first candidates:
 | ---: | --- | --- | --- |
 | 1 | VS. Ice Climber | Correct VS ROM set and EPROM burn | Best next burn-and-test candidate using the current `RP2C04-0004` path. Good validation of dump/burn/install workflow after preserving the current Super Mario Bros. ROMs. |
 | 2 | VS. Excitebike, Japan variant | Exact variant verification | Aligns with the current `RP2C04-0004` path when using the Japan-compatible set. Do not generalize this to all Excitebike variants. |
-| 3 | VS. Tetris | PPU and DIP behavior verification | Research target only for now. Capture suggested DIP settings for later testing, but do not assume current PPU compatibility until the exact variant, PPU behavior, and color behavior are pinned down. |
+| 3 | VS. Tetris | DIP/color behavior verification | In the current test batch. Burn/test after the direct 0004 matches and document actual color output, DIP settings, and any mismatch. |
 | 4 | VS. Mahjong | PPU mismatch and controls verification | Low-priority curiosity only. Expected to have incorrect colors on the current `RP2C04-0004` path; single-player mode and joystick/button control mapping remain to be verified. |
 
-Working conclusion: VS. Ice Climber is the cleanest next EPROM workflow test once the current Super Mario Bros. ROMs are dumped, labeled, and preserved. The Japan `RP2C04-0004` Excitebike path is the next-best low-friction research candidate if the exact set is verified.
+Working conclusion: VS. Ice Climber is the cleanest next EPROM workflow test once the current Super Mario Bros. ROMs are dumped, labeled, and preserved. The Japan `RP2C04-0004` Excitebike path is the next-best low-friction candidate. VS. Tetris is also worth burning in this batch, but its result should be recorded as hardware compatibility evidence, especially color/DIP behavior.
 
 ## Practical restoration scope
 
@@ -99,8 +113,9 @@ Potential cabinet-relevant targets for this PPU group include:
 | VS. Clu Clu Land | Same PPU group; not currently a priority target. |
 | VS. Excitebike, Japan variant | Same PPU group; last-tier target and variant-sensitive low-friction candidate. |
 | VS. R.B.I. Baseball | Same PPU group; not currently a priority target. |
+| VS. Tetris | Not listed here as a native 0004 title, but included in the current test batch because multiple references indicate broader PPU/DIP compatibility behavior. |
 
-These are the most practical low-friction EPROM candidates because they align with the PPU already installed. Board population, ROM socket layout, daughterboards, controls, and DIP settings still need to be verified per title.
+These are the most practical low-friction EPROM candidates because they either align with the PPU already installed or have enough external compatibility evidence to justify a controlled test. Board population, ROM socket layout, daughterboards, controls, DIP settings, and actual color output still need to be verified per title.
 
 ## Future primary target: VS. Duck Hunt
 
@@ -137,13 +152,14 @@ Dr. Mario is not part of the current `RP2C04-0004` Super Mario Bros. group.
 
 ## Secondary target: VS. Tetris
 
-VS. Tetris is a secondary future target. It should be tracked, but it should not pull sourcing effort away from Dr. Mario or Duck Hunt.
+VS. Tetris is a secondary future title and is also part of the current EPROM test batch. It should be tracked, but it should not pull sourcing effort away from Dr. Mario or Duck Hunt.
 
 Working notes:
 
 - Treat Tetris as a title requiring PPU and DIP-switch verification rather than assuming a single fixed PPU path.
 - External references indicate Tetris can work with more than one PPU path and may include DIP color-setting behavior.
 - Capture the suggested DIP setting for later hardware testing with `RP2C04-0004`: DIP 5 = ON, DIP 6 = OFF, DIP 7 = ON, DIP 8 = test/verify. This is a test note, not a validated cabinet setting.
+- Burn/test is reasonable after the direct 0004 matches because the ROM set is available and the experiment is low-friction.
 - Before buying hardware specifically for Tetris, verify the exact VS title variant, required PPU, board population, DIP expectations, and whether the available hardware is original, repro, modified, or part of another conversion path.
 
 ## Mahjong verification notes
@@ -174,7 +190,7 @@ Working notes:
 
 VS. Ice Climber is a tertiary target and remains interesting because it is in the current `RP2C04-0004` group.
 
-VS. Excitebike and VS. Mahjong are last-tier targets. They should not drive acquisition unless the parts overlap with higher-priority goals or appear opportunistically.
+VS. Excitebike and VS. Mahjong are last-tier targets. Excitebike Japan is included in the current test batch because it overlaps the installed PPU. Mahjong should not drive acquisition unless the parts overlap with higher-priority goals or appear opportunistically.
 
 Working notes:
 
