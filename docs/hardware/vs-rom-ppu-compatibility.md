@@ -27,6 +27,35 @@ This batch records ROM sets available for private EPROM programming and hardware
 
 Batch conclusion: the active burn/test batch is `iceclimb`, `excitebkj`, and `vstetris`. `vsmahjng` is retained as a documented reference/edge-case candidate, not as a clean current-cabinet recommendation.
 
+## DIP and smoke-test posture for this batch
+
+DIP switches should be changed only with the cabinet powered off. DIP selection is not the primary smoke risk in this workflow; the primary smoke risks are powered chip swaps, reversed chips, offset chip insertion, bent or shorted pins, wrong EPROM type or pinout, incorrect ROM socket placement, incorrect board side, unstable +5 V, and disturbed harness or edge-connector wiring.
+
+Pre-power checklist for any EPROM/PPU test:
+
+- Power off and allow the supply to discharge before touching ROMs, PPU, CPU, daughterboards, or DIP banks.
+- Photograph the current board state before removing any known-working chips.
+- Label every removed ROM by socket location before it leaves the board.
+- Confirm notch orientation on every EPROM, PPU, and CPU against the board silkscreen and the known-working installed orientation.
+- Confirm every chip is fully seated, with no pin folded under the package and no one-pin offset in either direction.
+- Confirm the EPROM family and capacity match the intended socket workflow before applying power.
+- Confirm ROM placement against the specific VS set and board side being tested; do not rely on ZIP filename alone.
+- Confirm the `RP2C04-0004` remains installed for this test batch unless the test explicitly says otherwise.
+- Confirm the harness and edge connector are fully seated and not shifted.
+- Check +5 V at the board after any board removal/reinstall before extended runtime.
+- On first power after a swap, watch for immediate abnormal smell, heat, noise, blank raster behavior, or supply distress; power down immediately if observed.
+
+First-pass DIP posture:
+
+| Set | DIP posture for first controlled test | Notes |
+| --- | --- | --- |
+| `iceclimb` | Use ordinary gameplay/coinage defaults first. MAME records SW1:1-3 as coinage, SW1:4-5 as lives, SW1:6 as difficulty, SW1:7 as bear timer, and SW1:8 as unused. | No PPU-select DIP is expected for this clean `RP2C04-0004` path. |
+| `excitebkj` | Use ordinary gameplay/coinage defaults first. MAME records the Excitebike DIP block as coinage, bonus bike, qualifying-time difficulty, and one unknown/unused bit. | No PPU-select DIP is expected for this clean `RP2C04-0004` Japan path. |
+| `vstetris` | Set the PPU selection bits for `RP2C04-0004` before judging color correctness. MAME records VS. Tetris `PPU Type` on SW1:6, SW1:7, and SW1:8, with `RP2C04-0004` represented by the `0xc0` value. | In MAME's active-low DIP notation this appears as SW1:6 ON, SW1:7 ON, SW1:8 OFF for `RP2C04-0004`. Verify against the physical board's ON arrow and document the actual switch positions used. |
+| `vsmahjng` | Do not include in the first clean smoke-test pass. | Treat as a reference/edge-case item because of expected PPU/color mismatch and possible DualSystem/control assumptions. |
+
+Tetris note: the current working interpretation for `RP2C04-0004` is SW1:6 ON, SW1:7 ON, SW1:8 OFF, but this must be verified against the physical DIP bank orientation. Do not use color output alone as proof until the physical ON/OFF orientation is recorded with a photo.
+
 ## Validated `RP2C04-0004` candidates for the current cabinet
 
 This section records only claims validated strongly enough to act on for the current `RP2C04-0004` cabinet path. It intentionally does not reproduce an unverified broad compatibility table.
@@ -158,7 +187,7 @@ Working notes:
 
 - Treat Tetris as a title requiring PPU and DIP-switch verification rather than assuming a single fixed PPU path.
 - External references indicate Tetris can work with more than one PPU path and may include DIP color-setting behavior.
-- Capture the suggested DIP setting for later hardware testing with `RP2C04-0004`: DIP 5 = ON, DIP 6 = OFF, DIP 7 = ON, DIP 8 = test/verify. This is a test note, not a validated cabinet setting.
+- Capture the suggested DIP setting for later hardware testing with `RP2C04-0004`: SW1:6 ON, SW1:7 ON, SW1:8 OFF. This is a test note, not a validated cabinet setting, and must be checked against the physical ON arrow/orientation.
 - Burn/test is reasonable after the direct 0004 matches because the ROM set is available and the experiment is low-friction.
 - Before buying hardware specifically for Tetris, verify the exact VS title variant, required PPU, board population, DIP expectations, and whether the available hardware is original, repro, modified, or part of another conversion path.
 
