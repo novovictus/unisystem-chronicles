@@ -1,5 +1,30 @@
 # Restoration Work Log
 
+## 2026-06-10 - Marquee lighting inspection and retrofit
+
+Worked through the marquee lighting assembly after noticing an unexplained dangling plug and tracing it into the top of the cabinet.
+
+Observed condition:
+
+- Found a sticker with prior coin-operator details, but the text was not readable.
+- Disassembled the original fluorescent light fixture for inspection.
+- The fixture appears to be Japanese-origin hardware.
+- The tube is Mitsubishi-branded and not a normal U.S. replacement size.
+- The original assembly had no fluorescent starter/ignitor present.
+- The original assembly used a single transformer.
+- Original cabling was retained and tied up rather than cut out.
+
+Work performed:
+
+- Bracketed modern mini fluorescent fixtures into the marquee area.
+- Left the original Japanese fixture and cabling documented in place as part of the cabinet history.
+- Restored marquee illumination while avoiding destructive removal of original lighting parts.
+
+Notes:
+
+- The original lighting hardware should be treated as cabinet provenance even though it is no longer the active illumination source.
+- The unreadable coin-operator sticker is worth photographing again under better lighting before further cleaning.
+
 ## 2026-06-10 - Locks, coin door, and back door
 
 Worked through the cabinet locks and access hardware.
