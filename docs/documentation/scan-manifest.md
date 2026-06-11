@@ -14,7 +14,7 @@ The repository should keep metadata, provenance notes, filenames, checksums, and
 
 | Date scanned | Item | Source/location | Master filename | Working filename | SHA256 | Preservation status | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| TBD | TBD | TBD | TBD | TBD | TBD | Pending IA upload | TBD |
+| 2026-06-08 | Large manuals and oversized schematics | Cabinet acquisition paperwork; handed off to The UPS Store, Centerville Road, Lancaster, PA | TBD after pickup | TBD after pickup | TBD after pickup | Professional scanning in progress | Discounted $55 preservation-friendly batch scan with approximately one-week turnaround; review page order, foldouts, schematic readability, and filenames before publication. |
 
 ## Suggested Internet Archive metadata
 
