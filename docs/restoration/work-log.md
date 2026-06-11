@@ -1,5 +1,24 @@
 # Restoration Work Log
 
+## 2026-06-10 - Locks, coin door, and back door
+
+Worked through the cabinet locks and access hardware.
+
+- Picked the existing coin door lock.
+- Replaced the coin lock with a known-key lock.
+- Bagged the original coin lock and left it in the coin bucket for provenance.
+- Found a drilled quarter slug dated 1974 jammed in the coin mechanism.
+- Preserved the 1974 drilled quarter as an internal cabinet easter egg by stringing it with chicken wire and placing it in the coin box.
+- Removed drywall screws that had been used to secure the back door.
+- Found the old back-door lock bracket.
+- Made a fiberboard reinforcement for the bracket.
+- Installed a rear lock keyed the same as the front coin door lock.
+
+Notes:
+
+- The lock work improves serviceability while retaining removed original parts with the cabinet.
+- The drilled 1974 quarter is preserved as found-object provenance rather than discarded as debris.
+
 ## 2026-06-08 - Initial repository scaffold
 
 Cabinet has been acquired and photographed after unloading and opening.
