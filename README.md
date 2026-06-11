@@ -50,7 +50,10 @@ Future target hardware to source:
 
 The `RP2A03` / `2A03` remains the CPU/APU. It is not the PPU.
 
-Detailed notes: [VS. UniSystem ROM and PPU Compatibility Notes](docs/hardware/vs-rom-ppu-compatibility.md)
+Detailed notes:
+
+- [VS. UniSystem ROM and PPU Compatibility Notes](docs/hardware/vs-rom-ppu-compatibility.md)
+- [EPROM Programming Notes](docs/hardware/eprom-programming-notes.md)
 
 ## Project goals
 
@@ -67,7 +70,7 @@ Detailed notes: [VS. UniSystem ROM and PPU Compatibility Notes](docs/hardware/vs
 ```text
 docs/
   restoration/          Work logs, restoration plan, issue notes
-  hardware/             Board, PPU, harness, PSU, audio, monitor notes
+  hardware/             Board, PPU, harness, PSU, audio, monitor, EPROM notes
   documentation/        Indexes and notes for scanned manuals/cards/schematics
   photos/               Photo inventory indexes and caption notes
 scans/                  Placeholder for scan manifests only; avoid raw copyrighted scans unless rights are clear
