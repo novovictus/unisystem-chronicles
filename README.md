@@ -92,6 +92,12 @@ Suggested handling:
 - Maintain a photo manifest in `docs/photos/photo-log.md`.
 - Record observations from each photo rather than relying on image filenames alone.
 
+## Related context
+
+This project is part of a longer personal history with Nintendo arcade hardware and shop machines:
+
+- [Prior Nintendo Machines](notes/prior-nintendo-machines.md)
+
 ## Legal / preservation boundary
 
 This repository is for restoration documentation, hardware notes, scan manifests, provenance notes, and repair logs.
