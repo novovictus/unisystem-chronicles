@@ -30,6 +30,28 @@ TMS27C256JL / 27C256
 
 Use the programmer's TI TMS27C256 profile when available. A generic 27C256 / 27256 profile is the fallback if the programmer does not provide a TI-specific profile.
 
+## UV eraser setup and safety, 2026-06-25
+
+The current UV eraser is a low-cost AY / Patriot-style EPROM eraser being reused for the VS. UniSystem EPROM workflow. Prior use suggests that a nominal 20-minute cycle may not always fully erase older UV EPROMs, so erase time should be treated as an empirical bench variable rather than a guaranteed setting.
+
+Current operating posture:
+
+- Remove all stickers and adhesive residue from the quartz window before erasing.
+- Place EPROMs window-up and centered under the UV tube.
+- Use a thin makeup compact mirror in the drawer as a non-conductive riser/reflector if it clears the bulb and tray movement.
+- Start with a 20-minute erase cycle, then run a programmer blank check.
+- If the chip is not blank, repeat in 10-minute increments and blank-check again.
+- Avoid unattended long-duration erasing; do not treat hours of UV exposure as a normal troubleshooting step.
+- Treat erase success as verified only when the programmer reports a clean blank check.
+
+Peephole/shutter safety posture:
+
+- Do not use the front peephole as an open viewing port.
+- Use an opaque metal laptop camera shutter on the outside of the tray door as the primary UV block.
+- If used, layered Kapton tape belongs on the inside of the tray door as secondary containment only.
+- Do not treat Kapton tape as the primary eye-safety control.
+- Treat this as a practical improvement to hobby bench gear, not as a certified UV safety enclosure.
+
 ## Socket notes
 
 The received sockets are 28-pin machined-pin DIP sockets. They are appropriate for repeated installation/removal compared with inexpensive leaf sockets, though they are not as convenient as ZIF sockets.
