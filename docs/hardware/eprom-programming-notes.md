@@ -30,30 +30,40 @@ TMS27C256JL / 27C256
 
 Use the programmer's TI TMS27C256 profile when available. A generic 27C256 / 27256 profile is the fallback if the programmer does not provide a TI-specific profile.
 
-## UV eraser setup and safety, 2026-06-25 / 2026-07-01
+## UV eraser setup and safety, 2026-06-25 / 2026-07-02
 
 The current UV eraser is a low-cost AY / Patriot-style EPROM eraser being reused for the VS. UniSystem EPROM workflow. Prior use suggests that a nominal 20-minute cycle may not always fully erase older UV EPROMs, so erase time should be treated as an empirical bench variable rather than a guaranteed setting.
 
 The tool has been refurbished and modified for safer, more repeatable bench use. This is a practical hobby-bench improvement, not a certified UV safety enclosure.
 
-Current optical/tray posture:
+### Operating baseline
 
 - Remove all stickers and adhesive residue from the quartz window before erasing.
 - Place EPROMs window-up and centered under the UV tube.
-- A second-hand mirror was cut into a rectangle matching the drawer footprint and installed as a non-conductive reflective tray insert.
 - Start with a 20-minute erase cycle, then run a programmer blank check.
 - If the chip is not blank, repeat in 10-minute increments and blank-check again.
 - Avoid unattended long-duration erasing; do not treat hours of UV exposure as a normal troubleshooting step.
 - Treat erase success as verified only when the programmer reports a clean blank check.
 
-Peephole/shutter safety posture:
+### Optical tray and reflector refinement
 
-- Do not use the front peephole as an open viewing port.
-- An opaque metal laptop camera shutter is installed on the outside of the tray door as the primary UV block.
-- Layered Kapton tape is installed on the inside of the tray door as secondary containment only.
-- Do not treat Kapton tape as the primary eye-safety control.
+A second-hand mirror was cut into a rectangle matching the drawer footprint and installed as a non-conductive tray insert/riser. This provides a clean, flat drawer surface and preserves electrical isolation at the chip-contact layer. It may contribute some secondary reflection, but household mirror construction is not assumed to be optimized for 254 nm UV-C reflection. Erase performance remains empirical and must be verified by programmer blank-check results.
 
-Cord and strain-relief refurbishment:
+A later reflector refinement added aluminum HVAC foil tape to recover more of the tube lamp output that would otherwise be absorbed by the plastic shell. The tape lettering was stripped with automotive parts cleaner before installation to leave a cleaner reflective surface. Strips were cut to match the inner drawer side-wall height, and a full piece was used to line the top lid area.
+
+This reflector work is intended to improve the UV-C cavity geometry without rebuilding the circuit. A tube lamp emits in multiple directions; the stock housing wastes much of the upward and sideward output into the shell. Side-wall foil and a top-lid reflector should redirect some of that otherwise wasted light toward the EPROM tray. Expected improvement is a meaningful empirical gain, not exponential amplification.
+
+### Peephole/shutter safety posture
+
+The stock peephole is treated as an unsafe raw UV-C viewing path, not as a useful inspection feature. The design problem is spectral separation: the hazardous useful erasing energy is shortwave UV-C, while the operator only needs a visible lamp-on indication.
+
+Layered Kapton tape is installed on the inside of the tray door as a retained filter/secondary containment layer. The metal laptop camera slider on the outside of the tray door is the primary opaque shutter. In normal use the shutter remains closed. For a brief status check, the shutter can be opened while the Kapton remains in place, allowing a muted visible lamp-on glow without relying on a direct raw UV-C sightline.
+
+The value of the Kapton layer is not simply that it is an electrical insulator. In this application it is being used as a thin, thermally tolerant, electrically insulating, translucent filter layer that attenuates the UV-C sightline while still passing enough longer-wavelength visible glow to act as a status indicator. This replaces the prior electrical-tape workaround, which blocked the hole but still required accepting exposure risk to inspect lamp operation.
+
+Do not treat Kapton tape as the primary eye-safety control. The metal shutter remains the primary block; Kapton is the retained inner filter and fallback containment layer.
+
+### Cord and strain-relief refurbishment
 
 - The original cheap power cord was removed rather than reused.
 - The original cord was desoldered and removed from the unit.
@@ -61,7 +71,7 @@ Cord and strain-relief refurbishment:
 - The cord entry hole was drilled to fit a new 3/8-inch grommet.
 - A donor cord from the bench stash was soldered in place.
 - Internal wiring was rerouted and secured with Kapton tape.
-- Before routine use, treat the eraser as a modified mains-powered tool: inspect cord routing, grommet fit, insulation, solder joints, switch/timer behavior, and case closure.
+- Before routine use, treat the eraser as a modified mains-powered tool: inspect cord routing, grommet fit, insulation, solder joints, switch/timer behavior, reflector tape adhesion, and case closure.
 
 Photo reference:
 
