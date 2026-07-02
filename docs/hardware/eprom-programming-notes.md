@@ -45,13 +45,18 @@ The tool has been refurbished and modified for safer, more repeatable bench use.
 - Avoid unattended long-duration erasing; do not treat hours of UV exposure as a normal troubleshooting step.
 - Treat erase success as verified only when the programmer reports a clean blank check.
 
-### Optical tray and reflector refinement
+### Tray and reflector experiment sequence
 
-A second-hand mirror was cut into a rectangle matching the drawer footprint and installed as a non-conductive tray insert/riser. This provides a clean, flat drawer surface and preserves electrical isolation at the chip-contact layer. It may contribute some secondary reflection, but household mirror construction is not assumed to be optimized for 254 nm UV-C reflection. Erase performance remains empirical and must be verified by programmer blank-check results.
+The lower-tray work is being retained as an experiment sequence rather than overwritten as each idea improves.
 
-A later reflector refinement added aluminum HVAC foil tape to recover more of the tube lamp output that would otherwise be absorbed by the plastic shell. The tape lettering was stripped with automotive parts cleaner before installation to leave a cleaner reflective surface. Strips were cut to match the inner drawer side-wall height, and a full piece was used to line the top lid area.
+1. Compact-mirror proof of concept: a small makeup/compact mirror was first used as a removable, non-conductive riser and visible-reflection test surface. This validated the value of raising and cleaning up the chip-contact area without placing EPROM legs directly on conductive foil.
+2. Cut lower mirror: a second-hand mirror was then cut into a rectangle matching the drawer footprint and installed as a fitted non-conductive tray insert/riser. This provided a clean, flat drawer surface and preserved electrical isolation at the chip-contact layer. It may contribute some secondary reflection, but household mirror construction is not assumed to be optimized for 254 nm UV-C reflection.
+3. Aluminum cavity reflector: aluminum HVAC foil tape was added to recover more of the tube lamp output that would otherwise be absorbed by the plastic shell. The tape lettering was stripped with automotive parts cleaner before installation to leave a cleaner reflective surface. Strips were cut to match the inner drawer side-wall height, and a full piece was used to line the top lid area.
+4. Planned fused-quartz lower tray: two Alpha Nanotech fused quartz plates, UV-Vis grade, 50 x 50 x 1 mm, were ordered for the next lower-tray iteration. The planned stack is a centered 50 x 100 mm fused-quartz pad over 3M 3340 aluminum foil tape. The 3M 3340 tape provides the lower reflective aluminum layer; the fused quartz provides a UV-transmitting insulating contact surface for EPROM placement.
 
-This reflector work is intended to improve the UV-C cavity geometry without rebuilding the circuit. A tube lamp emits in multiple directions; the stock housing wastes much of the upward and sideward output into the shell. Side-wall foil and a top-lid reflector should redirect some of that otherwise wasted light toward the EPROM tray. Expected improvement is a meaningful empirical gain, not exponential amplification.
+The planned quartz/aluminum lower tray replaces the cut household mirror as the active chip-contact surface but does not invalidate the earlier mirror experiments. The compact mirror and cut mirror established the mechanical requirements: fitted tray support, EPROM-leg isolation, cleanable surface, and repeatable placement. The quartz iteration attempts to preserve those mechanical benefits while reducing the UV-C absorption penalty expected from ordinary mirror glass.
+
+This reflector work is intended to improve the UV-C cavity geometry without rebuilding the circuit. A tube lamp emits in multiple directions; the stock housing wastes much of the upward and sideward output into the shell. Side-wall foil, top-lid foil, and a lower aluminum reflector under fused quartz should redirect some of that otherwise wasted light toward the EPROM tray. Expected improvement is a meaningful empirical gain, not exponential amplification. Erase performance remains empirical and must be verified by programmer blank-check results.
 
 ### Peephole/shutter safety posture
 
@@ -71,7 +76,7 @@ Do not treat Kapton tape as the primary eye-safety control. The metal shutter re
 - The cord entry hole was drilled to fit a new 3/8-inch grommet.
 - A donor cord from the bench stash was soldered in place.
 - Internal wiring was rerouted and secured with Kapton tape.
-- Before routine use, treat the eraser as a modified mains-powered tool: inspect cord routing, grommet fit, insulation, solder joints, switch/timer behavior, reflector tape adhesion, and case closure.
+- Before routine use, treat the eraser as a modified mains-powered tool: inspect cord routing, grommet fit, insulation, solder joints, switch/timer behavior, reflector tape adhesion, quartz plate placement, and case closure.
 
 Photo reference:
 
