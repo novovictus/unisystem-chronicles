@@ -56,7 +56,7 @@ The lower-tray work is being retained as an experiment sequence rather than over
 
 Material/spec notes recorded from product listings at time of selection:
 
-- 3M 3340 aluminum foil tape: selected as a high-temperature HVAC foil tape intended for ductwork sealing, with listing/spec language indicating UL 181A-P / UL 181B-FX style use. In this eraser it is being used as a reflective aluminum surface, not as a structural safety component or certified UV enclosure material.
+- 3M 3340 aluminum foil tape: selected as a high-temperature HVAC foil tape intended for ductwork sealing, with listing/spec language indicating UL 181A-P / UL 181B-FX style use and a service temperature range of -40 F to 300 F (-40 C to 149 C). In this eraser it is being used as a reflective aluminum surface, not as a structural safety component or certified UV enclosure material.
 - Alpha Nanotech fused quartz plates: selected as UV-Vis grade 50 x 50 x 1 mm plates. Listing/spec language claimed double-side polished fused quartz, optical suitability over 190-2500 nm, transmission above 83%, heat resistance up to 1450 C, resistance to acid/base/organic solvents, and laboratory UV-Vis grade size variation within 0.05 mm.
 - These are vendor-stated material specifications, not independently characterized measurements. The working assumption is that UV-Vis fused quartz is a better lower-tray insulator than ordinary mirror glass because the useful EPROM-erasing wavelength is in the shortwave UV-C region around 254 nm. Final validation remains erase time and programmer blank-check behavior.
 
