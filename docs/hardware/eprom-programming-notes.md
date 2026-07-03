@@ -30,7 +30,7 @@ TMS27C256JL / 27C256
 
 Use the programmer's TI TMS27C256 profile when available. A generic 27C256 / 27256 profile is the fallback if the programmer does not provide a TI-specific profile.
 
-## UV eraser setup and safety, 2026-06-25 / 2026-07-02
+## UV eraser setup and safety, 2026-06-25 / 2026-07-03
 
 The current UV eraser is a low-cost AY / Patriot-style EPROM eraser being reused for the VS. UniSystem EPROM workflow. Prior use suggests that a nominal 20-minute cycle may not always fully erase older UV EPROMs, so erase time should be treated as an empirical bench variable rather than a guaranteed setting.
 
@@ -52,15 +52,19 @@ The lower-tray work is being retained as an experiment sequence rather than over
 1. Compact-mirror proof of concept: a small makeup/compact mirror was first used as a removable, non-conductive riser and visible-reflection test surface. This validated the value of raising and cleaning up the chip-contact area without placing EPROM legs directly on conductive foil.
 2. Cut lower mirror: a second-hand mirror was then cut into a rectangle matching the drawer footprint and installed as a fitted non-conductive tray insert/riser. This provided a clean, flat drawer surface and preserved electrical isolation at the chip-contact layer. It may contribute some secondary reflection, but household mirror construction is not assumed to be optimized for 254 nm UV-C reflection.
 3. Aluminum cavity reflector: 3M 3340 aluminum HVAC foil tape was added to recover more of the tube lamp output that would otherwise be absorbed by the plastic shell. The tape lettering was stripped with automotive parts cleaner before installation to leave a cleaner reflective surface. Strips were cut to match the inner drawer side-wall height, and a full piece was used to line the top lid area.
-4. Planned fused-quartz lower tray: two Alpha Nanotech fused quartz plates, UV-Vis grade, 50 x 50 x 1 mm, were ordered for the next lower-tray iteration. The planned stack is a centered 50 x 100 mm fused-quartz pad over 3M 3340 aluminum foil tape. The 3M 3340 tape provides the lower reflective aluminum layer; the fused quartz provides a UV-transmitting insulating contact surface for EPROM placement.
+4. Fused-quartz lower tray iteration: two Alpha Nanotech fused quartz plates were selected for the lower tray. Rather than cutting one 50 x 50 x 1 mm pane down to fit the remaining tray width, the current plan is to let the panes overlap/step and use approximately 1 mm spacer rails to level and support the elevated pane. This avoids attempting to score-and-snap or otherwise trim thin fused quartz with ordinary glass-cutting tools.
+5. Bottom foil liner and spacer-rail salvage: the bottom tray was pre-emptively lined with foil, using the glass pane as a cutting template. Salvaged aluminum cable strands measuring just over 1 mm thick are available as rigid spacer rails. The intended use is full-length support under the elevated quartz plane rather than short point supports, keeping the pane from rocking while avoiding concentrated stress points.
+6. External safety labeling: supplemental UV warning labels were made from stock-photo source material, printed on inkjet vinyl sticker paper, cut to size, and applied externally to improve bench visibility of the hazard. These labels are documentation/safety reminders only; they do not make the unit a certified safety enclosure.
 
 Material/spec notes recorded from product listings at time of selection:
 
 - 3M 3340 aluminum foil tape: selected as a high-temperature HVAC foil tape intended for ductwork sealing, with listing/spec language indicating UL 181A-P / UL 181B-FX style use and a service temperature range of -40 F to 300 F (-40 C to 149 C). In this eraser it is being used as a reflective aluminum surface, not as a structural safety component or certified UV enclosure material.
-- Alpha Nanotech fused quartz plates: selected as UV-Vis grade 50 x 50 x 1 mm plates. Listing/spec language claimed double-side polished fused quartz, optical suitability over 190-2500 nm, transmission above 83%, heat resistance up to 1450 C, resistance to acid/base/organic solvents, and laboratory UV-Vis grade size variation within 0.05 mm.
+- Alpha Nanotech fused quartz plates: selected as 50 x 50 x 1 mm double-side-polished fused quartz plates. Listing/spec language for the industrial-grade and laboratory UV-Vis-grade plates claimed heat resistance up to 1450 C, resistance to acid/base/organic solvents, and dimensional variation within 0.10 mm for industrial grade and 0.05 mm for laboratory UV-Vis grade. The UV-Vis grade listing claimed optical suitability over 190-2500 nm with transmission above 83%.
 - These are vendor-stated material specifications, not independently characterized measurements. The working assumption is that UV-Vis fused quartz is a better lower-tray insulator than ordinary mirror glass because the useful EPROM-erasing wavelength is in the shortwave UV-C region around 254 nm. Final validation remains erase time and programmer blank-check behavior.
 
-The planned quartz/aluminum lower tray replaces the cut household mirror as the active chip-contact surface but does not invalidate the earlier mirror experiments. The compact mirror and cut mirror established the mechanical requirements: fitted tray support, EPROM-leg isolation, cleanable surface, and repeatable placement. The quartz iteration attempts to preserve those mechanical benefits while reducing the UV-C absorption penalty expected from ordinary mirror glass.
+The quartz/aluminum lower tray replaces the cut household mirror as the active chip-contact surface but does not invalidate the earlier mirror experiments. The compact mirror and cut mirror established the mechanical requirements: fitted tray support, EPROM-leg isolation, cleanable surface, and repeatable placement. The quartz iteration attempts to preserve those mechanical benefits while reducing the UV-C absorption penalty expected from ordinary mirror glass.
+
+Current quartz-fit posture: do not cut the fused quartz unless a later requirement justifies destructive experimentation or proper diamond abrasive cutting. The accepted bench approach is overlap/step geometry with smooth, full-length spacer rails supporting the raised pane. Avoid hard clamps, sharp cut ends, screw heads, or any other point load against the 1 mm quartz. The quartz should be retained with light mechanical stops or tray geometry, not compression.
 
 This reflector work is intended to improve the UV-C cavity geometry without rebuilding the circuit. A tube lamp emits in multiple directions; the stock housing wastes much of the upward and sideward output into the shell. Side-wall foil, top-lid foil, and a lower aluminum reflector under fused quartz should redirect some of that otherwise wasted light toward the EPROM tray. Expected improvement is a meaningful empirical gain, not exponential amplification. Erase performance remains empirical and must be verified by programmer blank-check results.
 
@@ -82,7 +86,7 @@ Do not treat Kapton tape as the primary eye-safety control. The metal shutter re
 - The cord entry hole was drilled to fit a new 3/8-inch grommet.
 - A donor cord from the bench stash was soldered in place.
 - Internal wiring was rerouted and secured with Kapton tape.
-- Before routine use, treat the eraser as a modified mains-powered tool: inspect cord routing, grommet fit, insulation, solder joints, switch/timer behavior, reflector tape adhesion, quartz plate placement, and case closure.
+- Before routine use, treat the eraser as a modified mains-powered tool: inspect cord routing, grommet fit, insulation, solder joints, switch/timer behavior, reflector tape adhesion, quartz plate placement, spacer-rail placement, and case closure.
 
 Photo reference:
 
