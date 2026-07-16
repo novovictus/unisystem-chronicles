@@ -81,17 +81,28 @@ Video reference:
 
 Working interpretation:
 
-> Positive control confirmed using QuantaDose UV-C test card, Amazon ASIN B08KZZ54BZ. The card's UV-C wavelength indicator produces immediate green fluorescence only during lamp-on exposure. It is treated as a live UV-C presence indicator, not a cumulative dosimeter unless the lower intensity strip is explicitly evaluated immediately after exposure.
-
-For subsequent tray, seam, and peephole tests, this card is useful as a live presence/absence indicator for UV-C-range exposure. It is not treated as a calibrated irradiance meter, dose meter, or safety certification device.
+- Positive control confirmed using QuantaDose UV-C test card, Amazon ASIN `B08KZZ54BZ`.
+- The card's UV-C wavelength indicator produces immediate green fluorescence only during lamp-on exposure.
+- The card is treated as a live UV-C presence indicator, not a cumulative dosimeter unless the lower intensity strip is explicitly evaluated immediately after exposure.
+- The card is useful as a live presence/absence indicator for UV-C-range exposure in subsequent tray, seam, and peephole tests.
+- The card is not treated as a calibrated irradiance meter, dose meter, or safety certification device.
 
 ### Peephole/shutter safety posture
 
-The stock peephole is treated as a raw UV-C viewing path. The design problem is spectral separation of the hazardous  erasing energy, which is shortwave UV-C, while the operator only needs a visible lamp-on indication.
+The stock peephole is treated as a raw UV-C viewing path. The design problem is spectral separation of the hazardous erasing energy, which is shortwave UV-C, while the operator only needs a visible lamp-on indication.
 
 Kapton tape is installed on the inside of the tray door as a filter containment layer. The metal laptop camera slider on the outside of the tray door is the primary opaque shutter. For a brief status check, the shutter can be opened allowing a muted visible lamp-on glow without relying on a direct raw UV-C sightline.
 
 The value of the Kapton layer is not simply that it is an electrical insulator, it is being used as a thin, thermally tolerant, translucent filter layer that attenuates the UV-C sightline while still passing enough longer-wavelength visible glow to act as a status indicator.
+
+Peephole test with shutter/window open through only the Kapton layer: the QuantaDose card was propped in the peephole test position and observed by camera. A green ambient glow from the filter was visible in the scene, but the card's UV-C indicator did not light up. A baseline photo of the card outside exposure was also recorded to show the card's normal non-exposed appearance and to confirm the positive-control behavior remained distinguishable from ambient green glow.
+
+Working interpretation:
+
+- The peephole/Kapton test did not produce the card's immediate UV-C indicator response.
+- The visible green ambient glow is treated as longer-wavelength/filter glow in the test scene, not as a positive UV-C card response.
+- The result supports the current peephole posture: the external metal shutter remains the primary opaque control, while the Kapton layer is a secondary filter/containment layer that appears to suppress the card-detectable UV-C-range response in this bench test.
+- This remains an empirical hobby-bench check rather than a certified UV safety measurement.
 
 ### Cord and strain-relief refurbishment
 
