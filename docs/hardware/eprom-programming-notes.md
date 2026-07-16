@@ -67,6 +67,24 @@ Current quartz-fit: do not cut the fused quartz. The accepted bench approach is 
 
 The reflector work is intended to improve the UV-C cavity geometry. A tube lamp emits in multiple directions, while the stock housing wastes much of the upward and sideward output into the shell. Side-wall foil, top-lid foil, and a lower aluminum reflector under fused quartz should redirect some of the otherwise wasted light toward the EPROM tray. Expected improvement is a meaningful gain.
 
+### UV-C card positive-control test, 2026-07-03
+
+A QuantaDose / Quanta X Technology reusable UV-C test card was added to the test workflow. The card is recorded as Amazon ASIN `B08KZZ54BZ`.
+
+The vendor listing and generalized product descriptions reference broader germicidal UV-C response ranges, including language around roughly 222-280 nm. The specific card in hand contains finer printed text stating: `When green UV-C is shown 250-270 nm light is present.` That on-card text is treated as the controlling description for this bench artifact because it is physically printed on the card used in the test, even where listing language differs.
+
+A short positive-control video confirmed the card response with the eraser lamp. The room lights were turned off, a camera was set up, and the lamp was powered briefly for approximately two seconds without direct viewing. In the recorded video, the card showed immediate green fluorescence only while the lamp was on and returned to non-glowing state afterward.
+
+Video reference:
+
+- QuantaDose UV-C test card positive control with EPROM eraser lamp: https://youtube.com/shorts/X01eHRtFL3A
+
+Working interpretation:
+
+> Positive control confirmed using QuantaDose UV-C test card, Amazon ASIN B08KZZ54BZ. The card's UV-C wavelength indicator produces immediate green fluorescence only during lamp-on exposure. It is treated as a live UV-C presence indicator, not a cumulative dosimeter unless the lower intensity strip is explicitly evaluated immediately after exposure.
+
+For subsequent tray, seam, and peephole tests, this card is useful as a live presence/absence indicator for UV-C-range exposure. It is not treated as a calibrated irradiance meter, dose meter, or safety certification device.
+
 ### Peephole/shutter safety posture
 
 The stock peephole is treated as a raw UV-C viewing path. The design problem is spectral separation of the hazardous  erasing energy, which is shortwave UV-C, while the operator only needs a visible lamp-on indication.
