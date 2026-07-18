@@ -89,12 +89,10 @@ Immediate restoration priorities:
 
 ## Open work items
 
-- [ ] Confirm exact VS. motherboard revision and cage configuration.
 - [ ] Photograph ROM daughtercards and edge connectors.
-- [ ] Confirm current ROM labels/checksums without publishing ROM contents.
 - [ ] Confirm whether any VS. Golf-specific parts remain.
 - [ ] Identify PSU type and inspect filter capacitors/connectors.
 - [ ] Trace audio path and hum source.
 - [ ] Document monitor chassis model and condition.
-- [ ] Build cap list only after chassis/PSU/board identities are verified.
+- [ ] Build cap list only after chassis, PSU, and board identities are verified.
 - [ ] Review professional documentation scans after pickup for page order, foldout coverage, schematic readability, and preservation filenames.
