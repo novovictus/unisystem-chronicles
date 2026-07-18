@@ -20,7 +20,7 @@ Markings on the EPROMs include variations of:
 - manufacturing/date/lot codes such as `8745`, `8935`, `9145`, and similar codes
 - factory/location markings such as `SINGAPORE`
 
-The parts show visible package, window, and marking differences, but the markings are consistent with TI TMS27C256JL-family UV EPROMs. 
+The parts show visible package, window, and marking differences, but the markings are consistent with TI TMS27C256JL-family UV EPROMs.
 
 ## UV eraser setup and mods, 2026-06-25 / 2026-07-03
 
@@ -43,7 +43,7 @@ Material/spec notes:
 
 - 3M 3340 aluminum foil tape: high-temperature HVAC foil tape intended for ductwork sealing, with listing/spec language indicating UL 181A-P / UL 181B-FX style use and a service temperature range of -40 F to 300 F (-40 C to 149 C).
 - Alpha Nanotech fused quartz 50 x 50 x 1 mm double-side-polished fused quartz plates. Listing specifications claim heat resistance up to 1450 C, resistance to acid/base/organic solvents, laboratory UV-Vis grade, claimed optical suitability over 190-2500 nm, and transmission above 83%.
-- Fused quartz is a better lower-tray insulator than ordinary mirror glass because the useful EPROM-erasing wavelength is in the shortwave UV-C region around 254 nm.
+- Fused quartz was selected over ordinary mirror glass because it is expected to transmit more of the approximately 254 nm UV-C used for EPROM erasure while still electrically isolating the EPROM legs from the aluminum reflector.
 
 The quartz/aluminum lower tray replaces the cut household mirror as the active chip-contact surface. The compact mirror and cut mirror established the mechanical requirements: fitted tray support, EPROM-leg isolation, cleanable surface, and repeatable placement. The quartz iteration attempts to preserve mechanical benefits while reducing UV-C absorption from ordinary mirror glass.
 
@@ -66,7 +66,7 @@ Kapton tape is installed on the inside of the tray door as a filter containment 
 
 The value of the Kapton layer is not simply that it is an electrical insulator. It is used as a thin, thermally tolerant, translucent filter layer that attenuates the UV-C sightline while still passing enough longer-wavelength visible glow as a status indicator.
 
-A test with the shutter window open through only the Kapton layer, the QuantaDose card was propped near the peephole a green ambient glow from the filter was visible but the UV-C indicator did not glow. A baseline photo of the card outside exposure shows the card's non-exposed appearance and confirms the positive-control behavior remained distinguishable from ambient green glow.
+For the peephole test, the shutter window was opened so that only the Kapton layer remained in the sightline. The QuantaDose card was positioned near the peephole and observed by camera. A green ambient glow from the filter was visible, but the card's UV-C indicator did not glow. A baseline photo of the card outside exposure shows its normal appearance and confirms that the positive-control response remained distinguishable from the ambient green glow.
 
 ### Cord and strain-relief refurbishment
 
