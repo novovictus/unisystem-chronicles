@@ -1,6 +1,6 @@
 # VS. Super Mario Bros. ROM Kit State
 
-This note records the current known state of the VS. Super Mario Bros. kit installed in the UniSystem board. It is based on direct board inspection, photo review, and the per-chip EPROM inventory captured from the kit. No ROM binaries are stored in this repository.
+This note records the current known state of the VS. Super Mario Bros. kit installed in the UniSystem board. It is based on direct board inspection, photo review, and the per-chip EPROM inventory captured from the kit.
 
 ## Current identification
 
@@ -39,30 +39,9 @@ MDS-SM4_2Aor8A.bin
 MDS-SM4_2Bor8B.bin
 ```
 
-## Physical EPROM population
-
-The kit is not populated with six identical EPROM devices. The current observed population is:
-
-| Sticker | Manufacturer | Chip body marking |
-|---|---|---|
-| `MDS-SM4 1Aor6A` | Intel | `D2764A`, `U4120008S`, `PGM@12.5V`, `(c)INTEL '83` |
-| `MDS-SM4 1Bor6B` | Intel | `D2764A-3`, `U40522725`, `PGM@12.5V`, `(c)INTEL '83` |
-| `MDS-SM4 1Cor6C` | Intel | `D2764A-3`, `U4052269S`, `PGM@12.5V`, `(c)INTEL '83` |
-| `MDS-SM4 1Dor6D` | Intel | `D2764A-3`, `U3491199S`, `PGM@12.5V`, `(c)INTEL '83` |
-| `MDS-SM4 2Aor8A` | Mitsubishi | `M5L2764K`, `8413AM`, `JAPAN` |
-| `MDS-SM4 2Bor8B` | Mitsubishi | `M5L2764K`, `8414A1`, `JAPAN` |
-
-See [`vs-super-mario-bros-chip-inventory.md`](vs-super-mario-bros-chip-inventory.md) for the dedicated per-chip inventory.
-
 ## Expected MAME-style hashes
 
-Use MAME convention for comparison: CRC32 and SHA1 per ROM chip dump. Do not hash a combined set file for initial matching.
-
-Expected dump size for each chip:
-
-```text
-8192 bytes / 0x2000
-```
+Compare each individual 8 KiB (`8192` byte / `0x2000`) dump using MAME-style CRC32 and SHA1 hashes. Do not use a combined set file for initial matching.
 
 Known `suprmrio` / VS. Super Mario Bros. Set E Rev 4 hashes:
 
@@ -75,24 +54,18 @@ Known `suprmrio` / VS. Super Mario Bros. Set E Rev 4 hashes:
 | `MDS-SM4 2Bor8B` | 8192 | `42418d40` | `22ab61589742cfa4cc6856f7205d7b4b8310bc4d` |
 | `MDS-SM4 2Aor8A` | 8192 | `15506b86` | `69ecf7a3cc8bf719c1581ec7c0d68798817d416f` |
 
-Known alternate/harder-set difference:
-
-| Label | Size | CRC32 | SHA1 |
-|---|---:|---|---|
-| alternate `MDS-SM4 1Cor6C` | 8192 | `0011fc5a` | `5c2c49938a12affc03e64e5bdab307998be20020` |
-
-Matching rule:
+The known alternate/harder set substitutes only `1Cor6C`:
 
 ```text
-All six match the main table
-  -> standard known MAME suprmrio set
-
-Only 1Cor6C differs and matches CRC32 0011fc5a / SHA1 5c2c49938a12affc03e64e5bdab307998be20020
-  -> known alternate/harder set
-
-Any other mismatch
-  -> redump first, then investigate
+CRC32: 0011fc5a
+SHA1:  5c2c49938a12affc03e64e5bdab307998be20020
 ```
+
+## Identification criteria
+
+- All six standard hashes match: known MAME `suprmrio` Set E Rev 4.
+- Only `1Cor6C` matches the alternate hash: known alternate/harder set.
+- Any other mismatch: repeat the dump and verify the read before investigating it as a possible variant.
 
 ## Dumping notes
 
@@ -100,5 +73,4 @@ Any other mismatch
 - Perform at least two independent reads per chip.
 - Compare repeated reads byte-for-byte before drawing conclusions.
 - Keep ROM windows covered except when required by the programmer workflow.
-- Do not commit ROM images or reconstructed game binaries to this repository.
 - Commit only notes, labels, photos where appropriate, and MAME-style hash manifests.
