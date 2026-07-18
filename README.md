@@ -1,81 +1,63 @@
 # UniSystem Chronicles
 
-Nintendo VS. UniSystem restoration and technical documentation from an original orange Donkey Kong Jr. cabinet conversion.
+Documentation of an original orange Nintendo cabinet converted from Donkey Kong Jr. to VS. UniSystem operation.
 
-This repository documents the cabinet as found, its likely conversion history, hardware inventory, restoration work, high-resolution documentation scans, and technical notes around Nintendo VS. System board/PPU/ROM relationships.
+The repository records the cabinet as found, conversion evidence, hardware state, restoration work, ROM and PPU relationships, and preservation material produced during the project.
 
-## Current cabinet state
-
-Working hypothesis based on the initial inspection:
+## Cabinet state
 
 ```text
 Original Donkey Kong Jr. orange Nintendo cabinet
 -> converted to Nintendo VS. UniSystem
 -> previously ran VS. Golf / Stroke & Match Golf
--> currently has a VS. Super Mario Bros. ROM kit installed
+-> currently fitted with a VS. Super Mario Bros. MDS-SM4 ROM kit
 ```
 
-## PPU / ROM notes
+Current board configuration:
 
-Nintendo VS. System game sets are effectively tied to specific PPU variants because the RP2C04 PPUs use different RGB palette mappings. A mismatched PPU may allow a game to run, but it will usually produce incorrect colors or fail title-specific expectations.
+```text
+Board: Nintendo MDS-01-CPU
+PPU:   RP2C04-0004
+Game:  VS. Super Mario Bros.
+```
 
-The current VS. Super Mario Bros. kit is installed with `RP2C04-0004`.
+The installed ROM kit was supplied in a Nintendo of America envelope shipped in January 2000. That date reflects service-stock or replacement-kit provenance, not the original game release.
 
-Current `RP2C04-0004` expansion candidates include:
+## Preservation approach
 
-- VS. Super Mario Bros.
-- VS. Ice Climber
-- VS. Ice Climber Dual
-- VS. Clu Clu Land
-- VS. Excitebike, Japan variant
-- VS. R.B.I. Baseball
+The original EPROMs will be removed, read repeatedly, and verified before any runtime testing. Verified copies will be written to replacement EPROMs so the originals can be preserved and stored.
 
-Future target hardware to source:
+The `RP2C04-0004` PPU will remain installed. No reliable expendable drop-in replacement has been identified, and removing it would add mechanical risk without a preservation benefit.
 
-- VS. Duck Hunt: `RC2C03B` or compatible 2C03-family VS RGB PPU, plus light gun and gun wiring validation.
-- VS. Dr. Mario: `RP2C04-0003`, and likely Nintendo `MDS-VS1-01` daughterboard depending on board setup.
-- Prior VS. Golf / Stroke & Match Golf reconstruction: likely `RP2C04-0002`, pending confirmation.
+## Documentation
 
-Detailed notes:
-
+- [VS. Super Mario Bros. ROM Kit State](docs/hardware/vs-super-mario-bros-rom-kit.md)
 - [VS. UniSystem ROM and PPU Compatibility Notes](docs/hardware/vs-rom-ppu-compatibility.md)
 - [EPROM Programming Notes](docs/hardware/eprom-programming-notes.md)
+- [Prior Nintendo Machines](notes/prior-nintendo-machines.md)
 
 ## Project goals
 
-- Chronicle the build from acquisition through repair and validation.
-- Preserve technical observations.
-- Document cabinet provenance and conversion evidence.
-- Inventory all components.
-- High-resolution scan documentation and publicly archive.
-- Capture photo evidence.
+- Document the cabinet's physical state and conversion history.
+- Record repair, validation, and restoration work.
+- Preserve original EPROM contents and hardware provenance.
+- Produce high-resolution scans and photo documentation where useful.
+- Publish technical observations that may help other Nintendo VS. System restorations.
 
 ## Repository layout
 
 ```text
 docs/
-  restoration/          Work logs, restoration plan, issue notes
-  hardware/             Board, PPU, harness, PSU, audio, monitor, EPROM notes
-  documentation/        Indexes and notes for scanned manuals/cards/schematics
-  photos/               Photo inventory indexes and caption notes
-scans/                  Placeholder for scan manifests only; avoid raw copyrighted scans unless rights are clear
-notes/                  Chat-derived notes and open questions
+  restoration/          Repair logs, restoration plans, and issue notes
+  hardware/             Board, PPU, harness, PSU, audio, monitor, and EPROM notes
+  documentation/        Indexes and notes for manuals, cards, and schematics
+  photos/               Photo inventories and captions
+scans/                  Scan manifests and archival notes
+notes/                  Historical context and open questions
 ```
 
-## Initial photo set
+## Photos
 
-Initial acquisition photos were taken after the cabinet came off the truck and the cabinet was opened for first inspection.
+Initial acquisition and inspection photos:
 
-External album:
-
-- https://photos.app.goo.gl/nQhC1So1yUntDKtJA
-
-## Related context
-
-This project is part of a longer personal history with Nintendo arcade hardware and shop machines:
-
-- [Prior Nintendo Machines](notes/prior-nintendo-machines.md)
-
-## Status
-
-Initial scaffold. Hardware notes are based on early inspection and conversation-derived working assumptions. Update once the cabinet is hands-on and board markings/photos are verified.
+https://photos.app.goo.gl/nQhC1So1yUntDKtJA
