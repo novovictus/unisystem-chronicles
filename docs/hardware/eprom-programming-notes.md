@@ -1,10 +1,30 @@
 # EPROM Programming Notes
 
-This file records cabinet-specific EPROM handling notes for the Nintendo VS. UniSystem restoration. ROM binaries are not stored in this repository.
+This file records cabinet-specific EPROM stock, handling, erasing, programming, and bench-tool notes for the Nintendo VS. UniSystem restoration.
 
-## Current EPROM stock, 2026-06-10
+## Current EPROM stock and acquisition, 2026-06-10
 
-A batch of pulled Texas Instruments 27C256-family UV EPROMs and 28-pin machined-pin DIP sockets for the current erase/burn/test workflow.
+A batch of pulled Texas Instruments 27C256-family UV EPROMs and 28-pin machined-pin DIP sockets is available for the current erase, burn, and test workflow.
+
+The ordered EPROM stock was:
+
+```text
+Major Brands GB233 27C256 EPROM Grab Bag
+32K x 8 DIP-28
+Quantity: 10 pieces
+Condition: used pulls / mixed manufacturers
+Amazon listing price at order review: about $15.64 per 10-pack
+ASIN: B0CWJ2HQMD
+```
+
+Relevant listing details captured during order review:
+
+- Device family: `27C256` EPROM.
+- Organization: `32K x 8`, equal to 256 Kbit.
+- Package: `DIP-28`.
+- Quantity: 10 pieces.
+- Condition note: grab bag from various manufacturers, described as pulls that need cleaning and erasing.
+- Use posture: cheap test/programming stock, not trusted archival stock until individually validated.
 
 Observed markings on the EPROMs include variations of:
 
@@ -14,7 +34,7 @@ Observed markings on the EPROMs include variations of:
 - manufacturing/date/lot codes such as `8745`, `8935`, `9145`, and similar codes
 - factory/location markings such as `SINGAPORE`
 
-The parts show visible package/window/marking differences, but the markings are consistent with TI TMS27C256JL-family UV EPROMs. These are the current standard EPROM stock for 27256/27C256-compatible VS ROM socket work unless a chip fails blank check, programming, or verify.
+The parts show visible package, window, and marking differences, but the markings are consistent with TI TMS27C256JL-family UV EPROMs. These are the current standard EPROM stock for 27256/27C256-compatible VS ROM socket work unless a chip fails blank check, programming, or verify.
 
 ## Practical compatibility posture
 
@@ -28,7 +48,7 @@ TMS27C256JL / 27C256
 -> suitable for sockets expecting 27256 / 27C256 devices
 ```
 
-Use the programmer's TI TMS27C256 profile, generic 27C256 profile is the fallback if the programmer does not provide a TI-specific profile.
+Use the programmer's TI TMS27C256 profile. A generic 27C256 profile is the fallback if the programmer does not provide a TI-specific profile.
 
 ## UV eraser setup and safety, 2026-06-25 / 2026-07-03
 
@@ -57,13 +77,14 @@ The lower-tray work is being retained as an experiment sequence.
 
 Material/spec notes recorded from product listings at time of selection:
 
-3M 3340 aluminum foil tape: selected as a high-temperature HVAC foil tape intended for ductwork sealing, with listing/spec language indicating UL 181A-P / UL 181B-FX style use and a service temperature range of -40 F to 300 F (-40 C to 149 C). In this eraser it is being used as a reflective aluminum surface, not as a structural safety component or certified UV enclosure material.
-Alpha Nanotech fused quartz plates: selected as 50 x 50 x 1 mm double-side-polished fused quartz plates. Listing spec  for the plates claimed heat resistance up to 1450 C, resistance to acid/base/organic solvents, and dimensional variation within 0.10 mm for industrial grade and 0.05 mm for laboratory UV-Vis grade with claimed optical suitability over 190-2500 nm with transmission above 83%.
-These vendor-stated material specifications are not independent measurements with the assumption that fused quartz is a better lower-tray insulator than ordinary mirror glass because the useful EPROM-erasing wavelength is in the shortwave UV-C region around 254 nm.
+- 3M 3340 aluminum foil tape: selected as a high-temperature HVAC foil tape intended for ductwork sealing, with listing/spec language indicating UL 181A-P / UL 181B-FX style use and a service temperature range of -40 F to 300 F (-40 C to 149 C). In this eraser it is being used as a reflective aluminum surface, not as a structural safety component or certified UV enclosure material.
+- Alpha Nanotech fused quartz plates: selected as 50 x 50 x 1 mm double-side-polished fused quartz plates. Listing specifications claimed heat resistance up to 1450 C, resistance to acid/base/organic solvents, and dimensional variation within 0.10 mm for industrial grade and 0.05 mm for laboratory UV-Vis grade, with claimed optical suitability over 190-2500 nm and transmission above 83%.
+
+These vendor-stated material specifications are not independent measurements. The working assumption is that fused quartz is a better lower-tray insulator than ordinary mirror glass because the useful EPROM-erasing wavelength is in the shortwave UV-C region around 254 nm.
 
 The quartz/aluminum lower tray replaces the cut household mirror as the active chip-contact surface but does not invalidate the earlier mirror experiments. The compact mirror and cut mirror established the mechanical requirements: fitted tray support, EPROM-leg isolation, cleanable surface, and repeatable placement. The quartz iteration attempts to preserve those mechanical benefits while reducing the UV-C absorption penalty expected from ordinary mirror glass.
 
-Current quartz-fit: do not cut the fused quartz. The accepted bench approach is overlap/step geometry with a loose aluminum raft supporting the raised pane.
+Current quartz fit: do not cut the fused quartz. The accepted bench approach is overlap/step geometry with a loose aluminum raft supporting the raised pane.
 
 The reflector work is intended to improve the UV-C cavity geometry. A tube lamp emits in multiple directions, while the stock housing wastes much of the upward and sideward output into the shell. Side-wall foil, top-lid foil, and a lower aluminum reflector under fused quartz should redirect some of the otherwise wasted light toward the EPROM tray. Expected improvement is a meaningful gain.
 
@@ -73,7 +94,7 @@ A QuantaDose / Quanta X Technology reusable UV-C test card was added to the test
 
 The vendor listing and generalized product descriptions reference broader germicidal UV-C response ranges, including language around roughly 222-280 nm. The specific card in hand contains finer printed text stating: `When green UV-C is shown 250-270 nm light is present.` That on-card text is treated as the controlling description for this bench artifact because it is physically printed on the card used in the test, even where listing language differs.
 
-A short positive-control video confirmed the card response with the eraser lamp. The room lights were turned off, a camera was set up, and the lamp was powered briefly for approximately two seconds without direct viewing. In the recorded video, the card showed immediate green fluorescence only while the lamp was on and returned to non-glowing state afterward.
+A short positive-control video confirmed the card response with the eraser lamp. The room lights were turned off, a camera was set up, and the lamp was powered briefly for approximately two seconds without direct viewing. In the recorded video, the card showed immediate green fluorescence only while the lamp was on and returned to its non-glowing state afterward.
 
 Video reference:
 
@@ -91,11 +112,11 @@ Working interpretation:
 
 The stock peephole is treated as a raw UV-C viewing path. The design problem is spectral separation of the hazardous erasing energy, which is shortwave UV-C, while the operator only needs a visible lamp-on indication.
 
-Kapton tape is installed on the inside of the tray door as a filter containment layer. The metal laptop camera slider on the outside of the tray door is the primary opaque shutter. For a brief status check, the shutter can be opened allowing a muted visible lamp-on glow without relying on a direct raw UV-C sightline.
+Kapton tape is installed on the inside of the tray door as a filter containment layer. The metal laptop camera slider on the outside of the tray door is the primary opaque shutter. For a brief status check, the shutter can be opened, allowing a muted visible lamp-on glow without relying on a direct raw UV-C sightline.
 
-The value of the Kapton layer is not simply that it is an electrical insulator, it is being used as a thin, thermally tolerant, translucent filter layer that attenuates the UV-C sightline while still passing enough longer-wavelength visible glow to act as a status indicator.
+The value of the Kapton layer is not simply that it is an electrical insulator. It is being used as a thin, thermally tolerant, translucent filter layer that attenuates the UV-C sightline while still passing enough longer-wavelength visible glow to act as a status indicator.
 
-Peephole test with shutter/window open through only the Kapton layer: the QuantaDose card was propped in the peephole test position and observed by camera. A green ambient glow from the filter was visible in the scene, but the card's UV-C indicator did not light up. A baseline photo of the card outside exposure was also recorded to show the card's normal non-exposed appearance and to confirm the positive-control behavior remained distinguishable from ambient green glow.
+Peephole test with the shutter/window open through only the Kapton layer: the QuantaDose card was propped in the peephole test position and observed by camera. A green ambient glow from the filter was visible in the scene, but the card's UV-C indicator did not light. A baseline photo of the card outside exposure was also recorded to show the card's normal non-exposed appearance and confirm that the positive-control behavior remained distinguishable from ambient green glow.
 
 Working interpretation:
 
@@ -106,7 +127,7 @@ Working interpretation:
 
 ### Cord and strain-relief refurbishment
 
-- The original cheap power cord was desoldered and original grommet removed.
+- The original cheap power cord was desoldered and the original grommet removed.
 - The cord entry hole was drilled to fit a new 3/8-inch grommet, a donor cord from the bench stash was soldered in, and wiring was rerouted and secured with Kapton tape.
 
 Photo reference:
