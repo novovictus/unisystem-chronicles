@@ -14,6 +14,27 @@ The current working configuration is:
 
 The edge connector and harness show evidence of prior conversion work, including cut or missing wires. That condition should be documented as part of the cabinet's conversion history. It is not currently being treated as a reason to pursue DualSystem restoration.
 
+# PPU Notes
+
+`RP2A03` / `2A03` is the Ricoh CPU/APU used in NTSC NES-derived hardware. It contains the 6502-derived CPU core and audio functionality. Video output is handled by a separate PPU.
+
+For Nintendo VS. System hardware, the PPU is typically a separate 40-pin Ricoh chip marked with names such as:
+
+- `RP2C04-0001`
+- `RP2C04-0002`
+- `RP2C04-0003`
+- `RP2C04-0004`
+- `RP2C03B`
+- `RP2C05-xx`
+
+Current PPU reported in this cabinet:
+
+```text
+RP2C04-0004
+```
+
+This is consistent with a VS. Super Mario Bros. installation.
+
 ## Current EPROM test batch, 2026-06-10
 
 This batch records ROM sets available for private EPROM programming and hardware validation with the currently installed `RP2C04-0004` PPU. ROM binaries are not stored in this repository.
