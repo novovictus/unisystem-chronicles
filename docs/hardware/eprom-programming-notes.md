@@ -58,13 +58,31 @@ A positive-control video confirmed the card response with the eraser lamp. The l
 Video reference:
 - https://youtube.com/shorts/X01eHRtFL3A
 
+### Visible-spectrum and shutter tests, 2026-07-26
+
+A small visible-light spectrometer was used to compare an ordinary LED flashlight, the operating eraser lamp, the peephole with its shutter open and closed, and the same flashlight viewed through the installed Kapton layer. The test was intended to document relative visible-light behavior, not to measure the approximately 254 nm UV-C erasure line.
+
+The timestamped captures in the external photo album record the test sequence:
+
+| Capture | Test | Result |
+| --- | --- | --- |
+| `20260726_152921.jpg` | LED flashlight control | Broad continuous visible-light response used as the baseline. |
+| `20260726_153629.mp4` | Spectrometer pointed inside the operating eraser | Narrow mercury-discharge emission features were visible, distinct from the flashlight control. |
+| `20260726_153951.jpg` | Peephole open | Detectable visible lamp output and narrow emission features reached the spectrometer through the open peephole. |
+| `20260726_154316.jpg` | Peephole closed | The trace dropped to the baseline/no-detectable-output condition, confirming that the external metal shutter blocks the visible path. |
+| `20260726_155028.jpg` | Same flashlight covered by Kapton | The response remained visible but was noticeably reduced and altered relative to the uncovered flashlight control. This provides a repeatable, instrument-visible demonstration that the Kapton layer filters some visible light. |
+
+The eraser-lamp spectrum is consistent with a mercury-discharge source because it presents narrow visible emission features rather than the broad continuous response of the white LED flashlight. Exact wavelength labels from the inexpensive spectrometer are treated as approximate and are not used as a lamp calibration.
+
+The flashlight comparison establishes measurable filtering in the visible range: the same source remained detectable through the Kapton, but with a noticeably different and attenuated response. This does not quantify Kapton transmission at 254 nm. UV-C safety evidence remains the separate QuantaDose card result, while the metal slider remains the primary opaque shutter.
+
 ### Peephole/shutter safety posture
 
 The stock peephole is treated as a raw UV-C viewing path. The design problem is spectral separation of the hazardous shortwave UV-C, while the operator only needs a visible lamp-on indication.
 
 Kapton tape is installed on the inside of the tray door as a filter containment layer. The metal laptop camera slider on the outside of the tray door is the primary opaque shutter. For a brief status check, the shutter can be opened, allowing a muted visible lamp-on glow without relying on a direct raw UV-C sightline.
 
-The value of the Kapton layer is not simply that it is an electrical insulator. It is used as a thin, thermally tolerant, translucent filter layer that attenuates the UV-C sightline while still passing enough longer-wavelength visible glow as a status indicator.
+The value of the Kapton layer is not simply that it is an electrical insulator. It is used as a thin, thermally tolerant, translucent filter layer that measurably attenuates and alters the visible-light path while still passing enough longer-wavelength glow as a status indicator. Its transmission at the approximately 254 nm erasure wavelength has not been quantitatively measured.
 
 For the peephole test, the shutter window was opened so that only the Kapton layer remained in the sightline. The QuantaDose card was positioned near the peephole and observed by camera. A green ambient glow from the filter was visible, but the card's UV-C indicator did not glow. A baseline photo of the card outside exposure shows its normal appearance and confirms that the positive-control response remained distinguishable from the ambient green glow.
 
@@ -73,6 +91,6 @@ For the peephole test, the shutter window was opened so that only the Kapton lay
 - The original cheap power cord was desoldered and the original grommet removed.
 - The cord entry hole was drilled to fit a new 3/8-inch grommet, a donor cord from the bench stash was soldered in, and wiring was rerouted and secured with Kapton tape.
 
-Photo reference:
+Photo and video reference:
 
 - External Google Photos album: https://photos.app.goo.gl/2X9sLU1n8wPv37jN6
