@@ -48,23 +48,16 @@ Notes:
 
 On acquisition day, before the restoration work had progressed very far, the large manuals and physically oversized schematics were handed off for professional scanning.
 
-The scanning was arranged through The UPS Store on Centerville Road in Lancaster, PA. The print lead was unusually engaged with the material after recognizing it as original 1980s Nintendo arcade/service documentation. The preservation context mattered: these are the kinds of Nintendo service materials that many operators and collectors never see in person.
+The scanning was arranged through The UPS Store but later declined. These are the kinds of Nintendo service materials that many operators and collectors never see in person.
 
-Scope handed over:
+Scope:
 
 - Large-format schematics.
 - Oversized manual pages.
 - Nintendo VS. UniSystem / cabinet-related service documentation.
 - Material intended for high-resolution archival scanning and later preservation indexing.
 
-Terms and handling notes:
-
-- The store agreed to a discounted preservation-friendly price of $55 in exchange for approximately a one-week turnaround.
-- The handoff should be treated as the first archival action associated with the cabinet after acquisition.
-- Final scans should be reviewed for page order, missing foldouts, schematic readability, color/grayscale handling, and filename organization before upload or publication.
-- Repository tracking should remain metadata-first: filenames, hashes, notes, and archive links rather than raw copyrighted scan files in Git.
-
-## 2026-06-08 - Initial repository scaffold
+## 2026-06-08 - Initial acquisition
 
 Cabinet has been acquired and photographed after unloading and opening.
 
@@ -77,22 +70,3 @@ Initial known condition:
 - PPU observed/reported: `RP2C04-0004`.
 - Known issue: bad speaker hum.
 - Monitor reported solid.
-
-Immediate restoration priorities:
-
-1. Photo-document as-found cabinet state before cleaning or repair.
-2. Inventory boards, daughtercards, cage, harnesses, PSU, monitor chassis, and audio path.
-3. Verify all visible board and chip markings.
-4. Address speaker hum without altering original wiring unnecessarily.
-5. Scan and index all documentation.
-6. Preserve original harnesses and boards where practical.
-
-## Open work items
-
-- [ ] Photograph ROM daughtercards and edge connectors.
-- [ ] Confirm whether any VS. Golf-specific parts remain.
-- [ ] Identify PSU type and inspect filter capacitors/connectors.
-- [ ] Trace audio path and hum source.
-- [ ] Document monitor chassis model and condition.
-- [ ] Build cap list only after chassis, PSU, and board identities are verified.
-- [ ] Review professional documentation scans after pickup for page order, foldout coverage, schematic readability, and preservation filenames.
